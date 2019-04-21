@@ -1,0 +1,22 @@
+.slider {
+  &__dots {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+  }
+  &__dot {
+    @include size(15px);
+    padding: 0;
+    margin-right: 13px;
+    border-radius: 50%;
+    border: 3px solid rgba $color-white;
+    background-color: $theme-bg;
+    &:last-child {
+      margin-right: 0;
+    }
+    &.active {
+      border-color: $theme-bg;
+      background-color: $color-white;
+    }
+  }
+}

@@ -12,4 +12,113 @@
   </div>
 </section>
 
+<section class="edges block">
+  <div class="edges__wrapper block__wrapper">
+    <ul class="edges__list" js-slider>
+      {% set edges = [
+        {
+          "title": "Cобственное производство",
+          "description": "Контроль за всеми стадиями производственного процесса",
+          "icon": {
+            "id": "icon-gift",
+            "viewBox": "0 0 50 50",
+            "width": "50",
+            "height": "50"
+          }
+        },
+        {
+          "title": "Расширенный ассортимент&nbsp;продукции",
+          "description": "Возможность выбора от изделий до&nbsp;комплектующих",
+          "icon": {
+            "id": "icon-choices",
+            "viewBox": "0 0 50 50",
+            "width": "50",
+            "height": "50"
+          }
+        },
+        {
+          "title": "Для любого бюджета",
+          "description": "Заботимся о том, что продукция была&nbsp;доступна для Вас",
+          "icon": {
+            "id": "icon-wallet",
+            "viewBox": "0 0 50 50",
+            "width": "50",
+            "height": "50"
+          }
+        },
+        {
+          "title": "Повышенная влагостойкость",
+          "description": "Устойчивый материал к&nbsp;воздействию&nbsp;влаги",
+          "icon": {
+            "id": "icon-resistantance",
+            "viewBox": "0 0 50 50",
+            "width": "50",
+            "height": "50"
+          }
+        }
+      ] %}
+      {% for item in edges %}
+        <li class="edges__item">
+          {% include "components/edge.twig" with {item: item} %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{# <section class="advantages block">
+  <h2 class="visually-hidden">Наши преимущества перед другими конкурентами</h2>
+  <div class="advantages__wrapper block__wrapper">
+    <ul class="advantages__list" js-advantages-slider>
+      {% set advantages = [
+        {
+          "title": "Cобственное производство",
+          "description": "Контроль за всеми стадиями производственного процесса",
+          "icon": {
+            "id": "icon-gift",
+            "viewBox": "0 0 50 50",
+            "width": "50",
+            "height": "50"
+          }
+        },
+        {
+          "title": "Расширенный ассортимент&nbsp;продукции",
+          "description": "Возможность выбора от изделий до&nbsp;комплектующих",
+          "icon": {
+            "id": "icon-choices",
+            "viewBox": "0 0 50 50",
+            "width": "50",
+            "height": "50"
+          }
+        },
+        {
+          "title": "Для любого бюджета",
+          "description": "Заботимся о том, что продукция была&nbsp;доступна для Вас",
+          "icon": {
+            "id": "icon-wallet",
+            "viewBox": "0 0 50 50",
+            "width": "50",
+            "height": "50"
+          }
+        },
+        {
+          "title": "Повышенная влагостойкость",
+          "description": "Устойчивый материал к&nbsp;воздействию&nbsp;влаги",
+          "icon": {
+            "id": "icon-resistantance",
+            "viewBox": "0 0 50 50",
+            "width": "50",
+            "height": "50"
+          }
+        },
+      ] %}
+      {% for item in advantages %}
+        <li class="advantages__item">
+          {% include "components/advantage.twig" with {item: item} %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section> #}
+
 {% endblock %}
