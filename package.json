@@ -1,0 +1,71 @@
+{
+  "name": "devdan-flow",
+  "version": "2.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "description": "Excellent solution that solves the problems of the majority of web designers in terms of workflow optimization and automation of routine tasks.",
+  "scripts": {
+    "start": "gulp",
+    "build": "set NODE_ENV=build && gulp build",
+    "zip": "set NODE_ENV=build && gulp build && gulp zip"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "jquery": "^3.3.1",
+    "picturefill": "^3.0.3",
+    "svgxuse": "^1.2.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@htmlacademy/editorconfig-cli": "^1.0.0",
+    "autoprefixer": "^9.4.10",
+    "browser-sync": "^2.26.3",
+    "cssnano": "^4.1.8",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-debug": "^4.0.0",
+    "gulp-html-beautify": "^1.0.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-main-npm-files": "^1.0.5",
+    "gulp-newer": "^1.4.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-svgstore": "^7.0.1",
+    "gulp-twig": "^1.2.0",
+    "gulp-uglify": "^3.0.1",
+    "gulp-webp": "^4.0.0",
+    "gulp-zip": "^4.2.0",
+    "imagemin-giflossy": "^5.1.10",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-pngquant": "^6.0.1",
+    "main-npm-files": "^1.3.0",
+    "require-dir": "^1.2.0",
+    "stylelint": "^9.10.1",
+    "stylelint-config-htmlacademy": "^0.1.3"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "IE 11",
+    "Firefox ESR"
+  ],
+  "editorconfig-cli": [
+    "*.json",
+    "*.js",
+    "source/templates/**/*.twig",
+    "source/images/svg/**/*.svg",
+    "source/scss/**/*.{sass,scss}"
+  ],
+  "engines": {
+    "node": "8.9"
+  }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+    {% block title %}{% endblock %}
+  </title>
+
+  {% block stylesheets %}
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+  {% endblock %}
+
+
+</head>
+  <body class="body {% block body_mod %}{% endblock %}">
+    <div class="body__wrapper">
+      <div class="body__header">
+        {% block header %}
+          {% include "./header.twig" %}
+        {% endblock %}
+      </div>
+      <main class="body__content">
+        {% block body %}{% endblock %}
+      </main>
+      <div class="body__footer">
+        {% block footer %}
+          {% include "./footer.twig" %}
+        {% endblock %}
+      </div>
+    </div>
+    {% block js %}
+      <script src="js/vendor.js" defer></script>
+      <script src="js/main.js" defer></script>
+    {% endblock %}
+  </body>
+</html>

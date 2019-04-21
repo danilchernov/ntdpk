@@ -1,0 +1,384 @@
+{# 🖼 Macro for WEBP 🖼 #}
+{% macro picture (options) %}
+  {% spaceless %}
+    {% set options = {
+      className: "",
+      image: {
+        total: ["mobile"],
+        fileName: "",
+        fileExtension: "png",
+      },
+      alt: ''
+    }|merge(options|default({})) %}
+
+    <picture>
+      {# 🔥 webp #}
+      {% for mod in options.image.total %}
+        {% if mod == "desktop" %}
+            <source type="image/webp"
+                    media="(min-width: 1200px)" {# Optional #}
+                    srcset="images/{{ options.image.fileName }}-{{ mod }}@1x.webp 1, images/{{ options.image.fileName }}-{{ mod }}@2x.webp 2">
+        {% elseif mod == "tablet" %}
+          <source type="image/webp"
+                  media="(min-width: 768px)" {# Optional #}
+                  srcset="images/{{ options.image.fileName }}-{{ mod }}@1x.webp 1, images/{{ options.image.fileName }}-{{ mod }}@2x.webp 2">
+        {% elseif mod == "mobile" %}
+          <source type="image/webp"
+                  srcset="images/{{ options.image.fileName }}-{{ mod }}@1x.webp 1, images/{{ options.image.fileName }}-{{ mod }}@2x.webp 2">
+        {% endif %}
+      {% endfor %}
+
+      {# 🔥 cropping #}
+
+      {% for mod in options.image.total %}
+        {% if mod == "desktop" %}
+          <source media="(min-width: 1200px)"
+          srcset="images/{{ options.image.fileName }}-{{ mod }}@1x.{{ options.image.fileExtention }} 1x,
+          images/{{ options.image.fileName }}-{{ mod }}@2x.{{ options.image.fileExtention }} 2x">
+        {% elseif mod == "tablet" %}
+          <source media="(min-width: 768px)"
+          srcset="images/{{ options.image.fileName }}-{{ mod }}@1x.{{ options.image.fileExtention }} 1x,
+          images/{{ options.image.fileName }}-{{ mod }}@2x.{{ options.image.fileExtention }} 2x">
+        {% endif %}
+
+      {% endfor %}
+
+
+      {# 🔥 default #}
+      <img class="{{ options.className }}"
+          src="images/{{ options.fileName }}-mobile@1x.{{ options.image.fileExtension }}"
+          srcset="images/{{ options.fileName }}-mobile@2x.{{ options.image.fileExtension }} 2x"
+          alt="{{ options.alt }}">
+    </picture>
+  {% endspaceless %}
+{% endmacro %}
+{# 🖼 Macro for WEBP 🖼 #}
+
+{# 🦄 Macro for inline-Svg 🦄 #}
+{% macro svg(options) %}
+  {% spaceless %}
+    {% set options = {
+      id: '',
+      className: '',
+      viewBox: '',
+      width: '',
+      height: ''
+    }|merge(options|default({})) %}
+
+    <svg class="{{ options.className }}"
+        viewBox="{{options.viewBox}}"
+        width="{{ options.width }}"
+        height="{{ options.height }}">
+        <use xlink:href="images/inline-svg.svg#{{ options.id }}"></use>
+      </svg>
+  {% endspaceless %}
+{% endmacro %}
+{# 🦄 Macro for inline-Svg 🦄 #}
+
+{# 🔳 Macro for Button 🔳 #}
+{% macro button(title, options) %}
+  {# 🔥 https://x-twig.ru/tags/spaceless/ #}
+  {% spaceless %}
+    {% set options = {
+      tag: "button",
+      mod: "",
+      type: "button",
+      icon: "",
+      href: "",
+      name: "",
+      value: "",
+      js: "",
+      data: {},
+      disabled: false,
+    }|merge(options|default({})) %}
+    {# 🔥 https://x-twig.ru/filters/merge/ #}
+    {# 🔥 https://twig.symfony.com/doc/2.x/filters/default.html #}
+    {% set button_mods = "" %}
+
+    {# 🔥 https://twig.symfony.com/doc/2.x/filters/split.html #}
+    {# 🔥 https://twig.symfony.com/doc/2.x/filters/first.html #}
+    {% if options.mod %}
+      {% for mod in options.mod|split(" ") %}
+        {% set button_mods = button_mods ~ (mod|first == "_" ? "button" ~ mod ~ " " : mod) %}
+      {% endfor %}
+    {% endif %}
+
+    {% if options.href %}
+      {% set options = options|merge({tag: "a"}) %}
+    {% elseif options.type == "checkbox" or options.type == "radio" %}
+      {% set options = options|merge({tag: "label"}) %}
+    {% endif %}
+    <{{ options.tag }} class="button {{ button_mods }}"
+      {% if options.js %}
+        {{ options.js }}
+      {% endif %}
+
+      {% if options.disabled %}
+        disabled
+      {% endif %}
+
+      {% if options.attrs %}
+        {% for attrKey, attr in options.attrs %}
+          {{ attrKey }}="{{ attr is iterable ? attr|json_encode|raw : attr|raw }}"
+        {% endfor %}
+      {% endif %}
+
+      {% if options.data %}
+        {% for dataKey, item in options.data %}
+          data-{{ dataKey }}="{{ item is iterable ? item|json_encode|raw : item|raw }}"
+        {% endfor %}
+      {% endif %}
+
+      {% if options.tag and options.type %}
+        type="{{ options.type }}"
+      {% endif %}
+
+      {% if options.href %}
+        href="{{ options.href }}"
+      {% endif %}
+    >
+      {% if options.type == "checkbox" or options.type == "radio" %}
+        <input class="button__input" {% if options.checked %}checked{% endif %} value="{{ options.value }}" type="{{ options.type }}" name="{{ options.name }}">
+      {% endif %}
+      <span class="button__content">
+        {# 🔥🔥🔥 {% if options.icon %}
+            {% set icon_mod = "" %}
+            {% for mod in options.icon|split(" ") %}
+                {% set icon_mod = icon_mod ~ (mod|first == "_" ? "button__icon"~ mod ~" " : mod) %}
+            {% endfor %}
+            <span class="button__icon {{ icon_mod }}"></span>
+        {% endif %} 🔥🔥🔥 #}
+        <span class="button__title">
+          {# 🔥 https://x-twig.ru/filters/raw/ #}
+          {{ title|raw }}
+        </span>
+      </span>
+    </{{ options.tag }}>
+  {% endspaceless %}
+{% endmacro %}
+{# 🔳 Macro for Button 🔳 #}
+
+{# 📮 Macro for Input 📮 #}
+{% macro input(input_options, options) %}
+  {% spaceless %}
+    {% set input_options = input_options is iterable  ? input_options : {title: input_options} %}
+    {% set input_options = {
+        form: "",
+        type: "text",
+        name: "",
+        value: "",
+        js: "",
+        data: {},
+        readonly: false,
+        disabled: false,
+        required: false,
+    }|merge(input_options|default({})) %}
+    {# 🔥 https://x-twig.ru/filters/merge/ #}
+    {# 🔥 https://twig.symfony.com/doc/2.x/filters/default.html #}
+    {% set options = {
+      js: "",
+      data: {},
+      mod: "",
+    }|merge(options|default({})) %}
+
+      {% set field_mods = "" %}
+
+      {% set input_tag = input_options.type ==  "textarea" ? "textarea" : input_options.type   == "contenteditable" ? "div" : "input" %}
+
+      {% if options.mod %}
+        {% for mod in options.mod|split(" ") %}
+            {% set field_mods = field_mods ~  (mod|first == "_" ? "field" ~ mod ~ "  " : mod) %}
+            {# 🔥 https://twig.symfony.com/doc/2.x/filters/split.html #}
+            {# 🔥 https://twig.symfony.com/doc/2.x/filters/first.html #}
+        {% endfor %}
+      {% endif %}
+
+      <label class="field {{ field_mods }}"
+        {% if options.js %}
+          {{ options.js }}
+        {%   endif %}
+        {% if options.data %}
+          {% for dataKey, item in options.data %}
+            data-{{ dataKey }}="{{ item is iterable ? item|json_encode|raw : item|raw }}"
+          {% endfor %}
+        {% endif %}
+      >
+        <span class="field__title">
+          {{ input_options.title }}
+        </span>
+        <span class="field__main">
+          <{{ input_tag }}
+            class="field__input"
+            type="{{ input_options.type }}"
+            name="{{ input_options.name }}"
+            placeholder="{{ input_options.placeholder }}"
+
+            {% if input_options.js %}
+              {{ input_options.js }}
+            {% endif %}
+
+            {% if input_options.readonly %}
+              readonly
+            {% endif %}
+
+            {% if input_options.disabled %}
+              disabled
+            {% endif %}
+
+            {% if input_options.autocomplete %}
+              autocomplete="{{ input_options.autocomplete }}"
+            {% endif %}
+
+            {% if input_options.attrs %}
+              {% for attrKey, attr in input_options.attrs %}
+                {{ attrKey }}="{{ attr is iterable ? attr|json_encode|raw : attr|raw }}"
+              {% endfor %}
+            {% endif %}
+
+            {% if input_options.data %}
+              {% for dataKey, item in input_options.data %}
+                data-{{ dataKey }}="{{ item is iterable ? item|json_encode|raw : item|raw }}"
+              {% endfor %}
+            {% endif %}
+
+            {% if input_options.required %}
+              required
+            {% endif %}
+
+            {% if input_tag == "textarea" %}
+                {% if input_options.rows %}
+                  rows="{{ input_options.rows }}"
+                {% endif %}
+            {% elseif input_tag == "div" %}
+                contenteditable
+            {% else %}
+              value="{{ input_options.value|raw }}"
+            {% endif %}>
+
+            {% if input_tag == "textarea" or input_tag == "div" %}
+              {% spaceless %}
+                {{ input_options.value|raw }}
+              {% endspaceless %}
+                  </{{ input_tag }}>
+            {% endif %}
+        </span>
+        {# 🔥🔥🔥 Optional component 🔥🔥🔥 #}
+        {# {% if options.notify %}
+            <span class="field__notify">{{ options.notify|raw }}</span>
+        {% endif %}
+        {% if options.error %}
+            <span class="field__error">{{ options.error|raw }}</span>
+        {% endif %} #}
+    </label>
+  {% endspaceless %}
+{% endmacro %}
+{# 📮 Macro for Input 📮 #}
+
+
+{# 📲 Macro for Toggle 📲 #}
+{% macro toggle(input_options, options) %}
+  {% spaceless %}
+    {% set input_options = input_options is iterable ? input_options : {title: input_options} %}
+
+    {# 🔥 https://x-twig.ru/tags/spaceless/ #}
+    {# 🔥 https://x-twig.ru/filters/merge/ #}
+    {# 🔥 https://twig.symfony.com/doc/2.x/filters/default.html #}
+
+    {% set input_options = {
+      required: false,
+      value: "",
+      name: "",
+      type: "checkbox",
+      js: "",
+      form: "",
+      data: {},
+    }|merge(input_options|default({})) %}
+
+    {% set options = {
+        js: "",
+        data: {},
+        mod: "",
+    }|merge(options|default({})) %}
+
+    {% set field_mods = "" %}
+
+      {% if options.mod %}
+        {% for mod in options.mod|split(" ") %}
+          {% set field_mods = field_mods ~  (mod|first == "_" ? "toggle" ~ mod ~ "   " : mod) %}
+        {% endfor %}
+      {% endif %}
+
+      <label class="toggle {{ field_mods }}">
+
+        {% if options.js %}
+          {{ options.js }}
+        {%   endif %}
+
+        {% if options.data %}
+          {% for dataKey, item in options.data  %}
+            data-{{ dataKey }}="{{ item is  iterable ? item|json_encode|raw  : item|raw }}"
+          {% endfor %}
+        {% endif %}
+
+        <input
+          class="toggle__input"
+          type="{{ input_options.type }}"
+          name="{{ input_options.name }}"
+
+          {% if input_options.js %}
+            {{ input_options.js }}
+          {% endif %}
+
+          {% if input_options.data %}
+            {% for dataKey, item in input_options.data %}
+              data-{{ dataKey }}="{{ item is iterable ? item|json_encode|raw : item|raw }}"
+            {% endfor %}
+          {% endif %}
+
+          {% if input_options.checked %}
+            checked
+          {% endif %}
+
+          {% if input_options.required %}
+            required
+          {% endif %}
+        >
+        <span class="toggle__fake"></span>
+        <span class="toggle__main">
+          <span class="toggle__title">
+            {{ input_options.title|raw }}
+          </span>
+
+          {% if options.description %}
+            <span class="toggle__description">
+              {{ options.description|raw }}
+            </span>
+          {% endif %}
+
+        </span>
+
+        {% if options.error %}
+          <span class="toggle__error">
+            {{ options.error|raw }}
+          </span>
+        {% endif %}
+    </label>
+  {% endspaceless %}
+{% endmacro %}
+{# 📲 Macro for Toggle 📲 #}
+
+{# ✅ Macro for Checkbox ✅ #}
+{% macro checkbox(input_options, options) %}
+  {% from _self import toggle %}
+  {% set input_options = input_options is iterable ? input_options : {title: input_options} %}
+  {{ toggle(input_options|merge({type: "checkbox"}), options) }}
+{% endmacro %}
+{# ✅ Macro for Checkbox ✅ #}
+
+{# 🔘 Macro for radio 🔘 #}
+{% macro radio(input_options, options) %}
+  {% from _self import toggle %}
+  {% set input_options = input_options is iterable ? input_options : {title: input_options} %}
+  {{ toggle(input_options|merge({type: "radio"}), options) }}
+{% endmacro %}
+{# 🔘 Macro for radio 🔘 #}

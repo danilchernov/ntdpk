@@ -1,0 +1,26 @@
+.toggle {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  touch-action: none;
+  user-select: none;
+  font-size: $font-size;
+  font-weight: $font-weight-regular;
+  line-height: $line-height;
+  color: $color;
+  cursor: pointer;
+  &__main {
+    flex: 1 1 0;
+  }
+  &__fake {
+    position: relative;
+    flex: 0 0 auto;
+    @include size(25px); /* Optional */
+    border: 1px solid $color-red; /* Optional  */
+    transition: all 0.3s; /* Optional */
+    &::before {
+      content: '';
+    }
+  }
+}

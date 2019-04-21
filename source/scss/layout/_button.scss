@@ -1,0 +1,67 @@
+.button {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0;
+  border: none;
+  border-radius: 0; /* Optional */
+  background-color: rgba(0,0,0,0);
+  text-decoration: none;
+  user-select: none;
+  cursor: pointer;
+  &__content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    padding: 12px 25px; /* Optional */
+    font-family: $font-family;
+    font-weight: $font-weight-regular;
+    font-style: normal;
+    font-size: $font-size;
+    line-height: $line-height;
+    letter-spacing: 0;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-white;
+    background-color: rgba(0,0,0,0); /* Optional */
+    border: none; /* Optional */
+    border-radius: 0; /* Optional */
+    transition: all 0.3s;
+  }
+  &__title {
+    flex: 0 0 auto;
+    min-width: 0;
+    text-decoration: none;
+  }
+  &:focus,
+  &:hover,
+  &.is-hover {
+    .button__content {
+      opacity: 0.8; /* Optional */
+    }
+  }
+  &:active,
+  &.is-active {
+    .button__content {
+      opacity: 0.6; /* Optional */
+    }
+  }
+  &:disabled,
+  &.is-disabled {
+    pointer-events: none;
+    .button__content {
+      background-color: rgba($color-gray, 0.5);
+    }
+  }
+  &.is-loading {
+    opacity: 0.5;
+    @include trbl(1px,2px,3px,4px)
+  }
+}
+
+.button_full {
+  width: 100%;
+}

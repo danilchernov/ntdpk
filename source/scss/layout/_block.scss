@@ -1,0 +1,27 @@
+.block{
+  position: relative;
+  &__wrapper {
+    position: relative;
+    max-width: $mobile-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $padding;
+    padding-right: $padding;
+  }
+}
+
+@include media($tablet-width) {
+  .block {
+    &__wrapper {
+      max-width: $tablet-width;
+    }
+  }
+}
+
+@include media($desktop-width) {
+  .block {
+    &__wrapper {
+      max-width: $desktop-width;
+    }
+  }
+}

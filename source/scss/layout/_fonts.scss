@@ -1,0 +1,9 @@
+/*
+  1st - font-family name;
+  2sd - font's name as file;
+  3td - font-weight;
+  example: @include font("1st", "2sd", 3td);
+*/
+
+@include font("Roboto", "Roboto-Light", 300);
+@include font("Roboto", "Roboto-Regular", 400);

@@ -1,0 +1,49 @@
+/* Box sizes settings */
+$mobile-width: 320px;
+$tablet-width: 768px;
+$desktop-width: 1090px;
+$max-width: $desktop-width;
+$padding: 20px;
+$margin: 10px;
+
+
+/* Retina displays */
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
+
+/* Colors */
+$color-aqua: #00ffff;
+$color-black: #292929;
+$color-blue: #518DD5;
+$color-funchisa: #ff00ff;
+$color-gray: #97938F;
+$color-green: #008000;
+$color-lime: #00ff00;
+$color-maroon: #800000;
+$color-navy: #000080;
+$color-olive: #808000;
+$color-purple: #9F548C;
+$color-red: #D45D5E;
+$color-silver: #c0c0c0;
+$color-teal: #008080;
+$color-white: #ffffff;
+$color-yellow: #E98D4B;
+
+/* Fonts */
+$font-fallback: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica"," Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+
+$font-weight-thin: 100;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+$font-family: "Roboto", $font-fallback;
+
+/* Project settings */
+$font-weight: $font-weight-regular;
+$font-size: 1em;
+$color: $color-black;
+$line-height: 1;
+

@@ -1,0 +1,37 @@
+.field {
+  position: relative;
+  display: block;
+  &__main {
+    position: relative;
+    display: block;
+  }
+  &__input {
+    display: block;
+    width: 100%;
+    padding: 10px 15px; /* Optional */
+    border: none; /* Optional */
+    border-radius: 0; /* Optional */
+    font-family: $font-family; /* Optional */
+    font-weight: $font-weight-regular; /* Optional */
+    font-style: normal;
+    font-size: $font-size; /* Optional */
+    line-height: $line-height; /* Optional */
+    background-color: rgba(0,0,0,0); /* Optional */
+    appearance: none;
+    touch-action: none;
+    transition: all 0.3s;
+    @include placeholder() {
+      color: $color-gray; /* Optional */
+    }
+    &[disabled] {
+      border-color: $color-gray;
+    }
+    &:hover,
+    &:focus {
+      border-color: $color-gray;
+    }
+    &:active {
+      border-color: $color-gray;
+    }
+  }
+}
