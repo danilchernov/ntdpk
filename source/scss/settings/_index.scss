@@ -1,7 +1,7 @@
 /* Box sizes settings */
 $mobile-width: 320px;
 $tablet-width: 768px;
-$desktop-width: 1090px;
+$desktop-width: 1210px;
 $max-width: $desktop-width;
 $padding: 20px;
 $margin: 10px;
@@ -32,18 +32,30 @@ $color-yellow: #E98D4B;
 /* Fonts */
 $font-fallback: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica"," Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 
-$font-weight-thin: 100;
-$font-weight-light: 300;
+
 $font-weight-regular: 400;
-$font-weight-medium: 500;
-$font-weight-semibold: 600;
 $font-weight-bold: 700;
 $font-weight-black: 900;
-$font-family: "Roboto", $font-fallback;
+
+$font-family: "Lato", $font-fallback;
 
 /* Project settings */
-$font-weight: $font-weight-regular;
-$font-size: 1em;
-$color: $color-black;
-$line-height: 1;
 
+/**
+  * *Fonts
+*/
+$font-weight: $font-weight-regular;
+$font-size: $mobile-text-size;
+$color: #333333;
+$line-height: 1.2;
+
+$mobile-navigation-text-size: 18px;
+$mobile-title-text: 18px;
+$mobile-text-size: 14px;
+
+/**
+  * *Colors
+*/
+$main-color: $color;
+$secondary-color: $color-white;
+$theme-bg: #81b3d2;

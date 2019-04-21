@@ -21,7 +21,7 @@
 @include media($desktop-width) {
   .block {
     &__wrapper {
-      max-width: $desktop-width;
+      max-width: $max-width;
     }
   }
 }

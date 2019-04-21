@@ -9,7 +9,8 @@
     bs.init({
       server: {
         baseDir: 'build',
-        notify: false
+        notify: false,
+        ui: false
       }
     });
     bs.watch(config.paths.build).on('change', bs.reload);
