@@ -45,13 +45,13 @@ $font-family: "Lato", $font-fallback;
   * *Fonts
 */
 $font-weight: $font-weight-regular;
-$font-size: $mobile-text-size;
+$font-size: 14px;
 $color: #333333;
 $line-height: 1.2;
 
 $mobile-navigation-text-size: 18px;
 $mobile-title-text: 18px;
-$mobile-text-size: 14px;
+$mobile-text-size: $font-size;
 
 /**
   * *Colors
@@ -59,3 +59,5 @@ $mobile-text-size: 14px;
 $main-color: $color;
 $secondary-color: $color-white;
 $theme-bg: #81b3d2;
+$theme-bg-focus: #669ec0;
+$theme-bg-active: #5496bd;

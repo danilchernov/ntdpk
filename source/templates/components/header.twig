@@ -1,5 +1,64 @@
 {% from "../mock/ui.twig" import picture, svg,button, input, toggle, radio, checkbox %}
 
 <header class="header block" js-header>
-  
+  <div class="header__wrapper block__wrapper">
+    <div class="header__side">
+      <a class="header__logo logo" href="index.html" aria-label="Ссылка на главную страницу">NTDPK</a>
+      <a class="header__toggle" href="#" aria-label="Кнопка меню" js-navigation-toggle>
+        <span></span>
+      </a>
+    </div>
+    <nav class="header__navigation navigation" role="Навигация" js-navigation>
+      <ul class="navigation__list">
+        {% set navigation = [
+          {
+            "title": "Главная",
+            "href": "index.html",
+            "aria": "Ссылка на главную страницу"
+          },
+          {
+            "title": "Каталог",
+            "href": "catalog.html",
+            "aria": "Ссылка на каталог"
+          },
+          {
+            "title": "О компании",
+            "href": "about.html",
+            "aria": "Ссылка на страниц с информацией о компании"
+          },
+          {
+            "title": "Обратный звонок",
+            "href": "#",
+            "aria": "Вызвать модальное окно, чтобы оформить обратный звонок",
+            "mod": "navigation__link--icon",
+            "js": "js-call",
+            "icon": {
+              "id": "icon-call",
+              "viewBox": "0 0 25 25",
+              "width": "25",
+              "height": "25"
+            }
+          }
+        ] %}
+        {% for item in navigation %}
+          <li class="navigation__item">
+            <a class="navigation__link {% if item.mod %} {{ item.mod }} {% endif %}" 
+              href="{{ item.href }}"
+              aria-label="{{ item.aria }}"
+              {% if item.js %} {{ item.js }} {% endif %}>
+                <span>{{ item.title }}</span>
+                {% if item.icon %}
+                  <svg class="navigation__icon"
+                      viewBox="{{ item.icon.viewBox }}"
+                      width="{{ item.icon.width }}"
+                      height="{{ item.icon.height }}">
+                    <use xlink:href="images/inline-svg.svg#{{ item.icon.id }}"></use>
+                  </svg>
+                {% endif %}
+              </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
 </header>

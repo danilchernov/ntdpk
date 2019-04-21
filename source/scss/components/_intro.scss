@@ -1,0 +1,30 @@
+.intro {
+  background: url("../images/intro-bg@mobile.jpg") no-repeat 50% -55%;
+  background-size: auto auto;
+
+  overflow: hidden;
+  &__wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 85px 0 0;
+
+    font-size: $mobile-text-size;
+    color: $secondary-color;
+  }
+  &__title {
+    flex: 0 1 100%;
+    padding: 0 20px;
+    margin-bottom: 95px;
+    font-size: $mobile-title-text;
+    color: $color-black;
+    text-align: right;
+    text-transform: uppercase;
+  }
+  &__side {
+    align-self: center;
+    padding: 20px 20px;
+    max-width: 100%;
+    color: $color-white;
+    background-color: rgba($theme-bg, 0.5);
+  }
+}
