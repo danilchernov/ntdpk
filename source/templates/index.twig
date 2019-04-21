@@ -14,6 +14,7 @@
 
 <section class="edges block">
   <div class="edges__wrapper block__wrapper">
+    <h2 class="visually-hidden">Наши преимущества перед конкурентами</h2>
     <ul class="edges__list" js-slider>
       {% set edges = [
         {
@@ -66,59 +67,25 @@
   </div>
 </section>
 
-{# <section class="advantages block">
-  <h2 class="visually-hidden">Наши преимущества перед другими конкурентами</h2>
-  <div class="advantages__wrapper block__wrapper">
-    <ul class="advantages__list" js-advantages-slider>
-      {% set advantages = [
-        {
-          "title": "Cобственное производство",
-          "description": "Контроль за всеми стадиями производственного процесса",
-          "icon": {
-            "id": "icon-gift",
-            "viewBox": "0 0 50 50",
-            "width": "50",
-            "height": "50"
-          }
-        },
-        {
-          "title": "Расширенный ассортимент&nbsp;продукции",
-          "description": "Возможность выбора от изделий до&nbsp;комплектующих",
-          "icon": {
-            "id": "icon-choices",
-            "viewBox": "0 0 50 50",
-            "width": "50",
-            "height": "50"
-          }
-        },
-        {
-          "title": "Для любого бюджета",
-          "description": "Заботимся о том, что продукция была&nbsp;доступна для Вас",
-          "icon": {
-            "id": "icon-wallet",
-            "viewBox": "0 0 50 50",
-            "width": "50",
-            "height": "50"
-          }
-        },
-        {
-          "title": "Повышенная влагостойкость",
-          "description": "Устойчивый материал к&nbsp;воздействию&nbsp;влаги",
-          "icon": {
-            "id": "icon-resistantance",
-            "viewBox": "0 0 50 50",
-            "width": "50",
-            "height": "50"
-          }
-        },
-      ] %}
-      {% for item in advantages %}
-        <li class="advantages__item">
-          {% include "components/advantage.twig" with {item: item} %}
-        </li>
-      {% endfor %}
-    </ul>
+<section class="demo block">
+  <div class="demo__wrapper block__wrapper">
+    <h2 class="visually-hidden">Мы занимаемся производством террасных досок</h2>
+    <div class="demo__row">
+      <h2 class="demo__title">Террасная доска «‎ДПК»</h2>
+      <p>Это несложный монтаж, привлекательный внешний вид и долговечность</p>
+    </div>
+    <div class="demo__row">
+      <div class="demo__image">
+        <svg class="demo__icon"
+          viewBox="-24 0 480 480"
+          width="480"
+          height="480">
+          <use xlink:href="images/inline-svg.svg#icon-business"></use>
+        </svg>
+      </div>
+      {{ button('Перейти в каталог', {href: "#"}) }}
+    </div>
   </div>
-</section> #}
+</section>
 
 {% endblock %}

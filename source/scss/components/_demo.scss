@@ -1,0 +1,31 @@
+.demo {
+  &__wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 30px 20px;
+  }
+  &__row {
+    @include flex-column(1,1,0);
+    font-size: $mobile-text-size;
+    text-align: center;
+    &:nth-child(2n) {
+      margin-bottom: 30px;
+    }
+  }
+  &__title {
+    margin-top: 0;
+    font-size: $mobile-title-text;
+    text-transform: uppercase;
+  }
+  &__image {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  &__icon {
+    display: block;
+    @include size(150px);
+    fill: $theme-bg;
+  }
+}
