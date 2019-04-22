@@ -88,4 +88,66 @@
   </div>
 </section>
 
+<section class="hits block">
+  <div class="hits__wrapper block__wrapper">
+    <h2 class="hits__title">Самые популярные товары</h2>
+    <ul class="hits__list" js-slider>
+      {% set hits = [
+        { 
+          "href": "#",
+          "name": "Террасная доска ‎Эконом <i>«</i>Эконом<i>»</i>",
+          "picture": {
+            "raster": "images/hit-1.png",
+            "webp": "images/hit-1.webp",
+            "alt": "Изображение террасной доски"
+          },
+          "title": "Перейти на страницу товара",
+          "aria": "Ссылка на страницу товара"
+        },
+        { 
+          "href": "#",
+          "name": "Сайдинг <i>«</i>ДПК<i>»</i>",
+          "picture": {
+            "raster": "images/hit-2.png",
+            "webp": "images/hit-2.webp",
+            "alt": "Изображение фасадной панели из сайдинга"
+          },
+          "title": "Перейти на страницу товара",
+          "aria": "Ссылка на страницу товара"
+        },
+        { 
+          "href": "#",
+          "name": "Террасная доска <i>«</i>СТАНДАРТ<i>»</i>",
+          "picture": {
+            "raster": "images/hit-3.png",
+            "webp": "images/hit-3.webp",
+            "alt": "Изображение террасной доски класса «Cтандарт»"
+          },
+          "title": "Перейти на страницу товара",
+          "aria": "Ссылка на страницу товара"
+        }
+      ] %}
+      {% for item in hits %}
+        <li class="hits__item">
+          <a class="hit" href="{{ item.href }}" title="{{ item.title }}" aria-label="{{ item.aria }}">
+            <div class="hit__wrapper">
+              <div class="hit__main">
+                <picture>
+                  <source type="image/webp"
+                          srcset="{{ item.picture.webp }}">
+                
+                  <img class="hit__img"
+                      src="{{ item.picture.src }}"
+                      alt="{{ item.picture.alt }}">
+                </picture>
+              </div>
+              <span class="hit__label">{{ item.name }}</span>
+            </div>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.3/picturefill.js"></script>
 {% endblock %}

@@ -14,10 +14,8 @@
           items: 1,
           dots: true,
           loop: true,
-          autoplay: true,
-          autoplayTimeout: 5000,
-          autoplaySpeed: 500
         });
+        console.log($slider);
       });
     }
   }
