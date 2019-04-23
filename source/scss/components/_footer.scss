@@ -24,12 +24,12 @@
     width: 100%;
     padding: 10px 20px;
     margin-bottom: 20px;
-    font-size: $mobile-text-size;
+    font-size: $mobile-title-text;
     font-weight: $font-weight-bold;
     color: $theme-bg;
     text-transform: uppercase;
     text-decoration: none;
-    border: 2px solid $theme-bg;
+    border: 3px solid $theme-bg;
     transition: all 0.3s;
     span {
       margin-right: 5px;
@@ -74,7 +74,3 @@
     z-index: 1;
   }
 }
-
-/**
-  * TODO: Глянуть log, закоммитить что не закомичено, приступить к модалке и форме внитри нее и дальше по списку
-*/

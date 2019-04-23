@@ -3,6 +3,8 @@
     padding: 30px 20px 30px;
   }
   &__title {
+    margin-top: 0;
+    margin-bottom: 15px;
     font-size: $mobile-title-text;
     text-align: center;
     text-transform: uppercase;

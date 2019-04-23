@@ -2,18 +2,19 @@
   &__wrapper {
     display: flex;
     flex-flow: row wrap;
-    padding: 30px 20px;
+    padding: 30px 20px ;
   }
   &__row {
     @include flex-column(1,1,0);
     font-size: $mobile-text-size;
     text-align: center;
-    &:nth-child(2n) {
-      margin-bottom: 30px;
+    &:not(:last-child) {
+      margin-bottom: 20px;
     }
   }
   &__title {
     margin-top: 0;
+    margin-bottom: 15px;
     font-size: $mobile-title-text;
     text-transform: uppercase;
   }
@@ -21,7 +22,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   &__icon {
     display: block;

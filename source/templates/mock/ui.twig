@@ -89,6 +89,7 @@
       value: "",
       js: "",
       data: {},
+      aria: "",
       disabled: false,
     }|merge(options|default({})) %}
     {# 🔥 https://x-twig.ru/filters/merge/ #}
@@ -136,6 +137,11 @@
       {% if options.href %}
         href="{{ options.href }}"
       {% endif %}
+
+      {% if options.aria %}
+        aria-label="{{ options.aria }}"
+      {% endif %}
+      
     >
       {% if options.type == "checkbox" or options.type == "radio" %}
         <input class="button__input" {% if options.checked %}checked{% endif %} value="{{ options.value }}" type="{{ options.type }}" name="{{ options.name }}">

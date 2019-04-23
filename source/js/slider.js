@@ -3,7 +3,8 @@
   /* Check viewport. Slider will be init only in below 768px of viewport */
   const $sliders = $('[js-slider]');
   if ($sliders.length != 0) {
-    let documentWidth = $(document).innerWidth();
+    // let documentWidth = $(document).innerWidth();
+    let document = 1;
     if (documentWidth < 768) {
       $sliders.each(function() {
         const $slider = $(this);
