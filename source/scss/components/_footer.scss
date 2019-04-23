@@ -1,3 +1,80 @@
 .footer {
-
+  &__wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 30px 20px;
+  }
+  &__logo {
+    flex: none;
+    margin-bottom: 20px;
+  }
+  &__contacts {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  &__socials {
+    order: 1;
+  }
+  &__action {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    font-size: $mobile-text-size;
+    font-weight: $font-weight-bold;
+    color: $theme-bg;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid $theme-bg;
+    transition: all 0.3s;
+    span {
+      margin-right: 5px;
+      z-index: 1;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: auto;
+      width: 0;
+      height: 100%;
+      background-color: $theme-bg;transition: all 0.3s;
+    }
+    &:hover{
+      color: $secondary-color;
+      border-color: $theme-bg;
+      &::before {
+        left: 0;
+        width: 100%;
+        background-color: $theme-bg;
+      }
+      .footer__icon {
+        fill: $secondary-color;
+      }
+    }
+    &:active {
+      color: rgba($color-white, 0.3);
+      border-color: $theme-bg-active;
+      &::before {
+        background-color: $theme-bg-active;
+      }
+      .footer__icon {
+        fill: rgba($color-white, 0.3);
+      }
+    }
+  }
+  &__icon {
+    fill: $theme-bg;
+    transition: all 0.3s;
+    z-index: 1;
+  }
 }
+
+/**
+  * TODO: Глянуть log, закоммитить что не закомичено, приступить к модалке и форме внитри нее и дальше по списку
+*/

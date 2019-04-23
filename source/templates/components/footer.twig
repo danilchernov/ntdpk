@@ -1,3 +1,82 @@
 <footer class="footer block">
+  {# Footer: Логотип, контактная информация, можно добавить ссылки-якори, для того,чтобы можно добраться было до любой секции (например, на сайте-Х нажимаешь ссылку Сервис и страница проматывается до блока с названием сервис). Ссылки на соц сети и вместе просьбы оставить емаил, можно вставить кнопку для звонка #}
+  <div class="footer__wrapper block__wrapper">
+    <a class="footer__logo logo" href="index.html" aria-label="Ссылка на главную страницу">NTDPK</a>
 
+    <div class="footer__contacts contacts">
+      <div class="contacts__wrapper">
+        <h3 class="contacts__title">
+          ООО <i>«‎</i>Н-ТЕХНОЛОГИЯ<i>»</i>
+        </h3>
+      </div>
+      <ul class="contacts__list" js-contacts>
+        <li class="contacts__item">
+          <address class="contacts__address">г. Бийск, ул. Васильева 93 B</address>
+        </li>
+        <li class="contacts__item">
+          <span>Коммерческий отдел:</span>
+          <a class="contacts__link" href="#"{# tel:+73854302600 #} aria-label="Номер телефона коммерческого отдела предприятия" title="Нажмите, чтобы позвонить в коммерческий отдел предприятия">+7 3854-302-600</a>
+        </li>
+        <li class="contacts__item">
+          <span>Отдел продаж:</span>
+          <a class="contacts__link" href="#" {# tel:+79310864955 #} aria-label="Номер телефона отдела продаж предприятия" title="Нажмите, чтобы позвонить в отдел продаж предприятия">+7 913-086-4955</a>
+        </li>
+        <li class="contacts__item">
+          <span>Производство:</span>
+          <a class="contacts__link" href="#" aria-label="Номер телефона производственого отдела предприятия" title="Нажмите, чтобы позвонить в отдел производства предприятия">+7 903-991-7878 </a>
+        </li>
+        <li class="contacts__item">
+          <span>Электронная почта:</span>
+          <a class="contacts__link" href="#" {# mailto:info@ntdpk.ru #}>info@ntdpk.ru</a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer__socials socials">
+      <ul class="socials__list">
+        {% set socials = [
+          {
+            "aria": "Ссылка на страницу группы в ВК",
+            "title": "Перейти на страницу компании в ВК",
+            "icon": {
+              "id": "icon-vk",
+              "viewBox": "0 0 50 50",
+              "width": "50",
+              "height": "50"
+            }
+          },
+          {
+            "aria": "Ссылка на страницу компании в Инстаграм",
+            "title": "Перейти на страницу бизнес-аккаунта в Инстаграм",
+            "icon": {
+              "id": "icon-instagram",
+              "viewBox": "0 0 50 50",
+              "width": "50",
+              "height": "50"
+            }
+          }
+        ] %}
+        {% for item in socials %}
+          <li class="socials__item">
+            <a href="#" class="socials__link" aria-label="{{  }}" title{="{  }}">
+              <svg class="socials__icon"
+                  viewBox="{{ item.icon.viewBox }}"
+                  width="{{ item.icon.width }}"
+                  height="{{ item.icon.height }}">
+                <use xlink:href="images/inline-svg.svg#{{ item.icon.id }}"></use>
+              </svg>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <a class="footer__action" href="#" aria-label="Вызвать модальное окно, чтобы оформить обратный звонок" title="Оформить обратный звонок" js-call>
+      <span>Обратный звонок</span>
+      <svg class="footer__icon"
+        viewBox="0 0 25 25"
+        width="25"
+        height="25">
+      <use xlink:href="images/inline-svg.svg#icon-call"></use>
+    </svg>
+    </a>
+  </div>
 </footer>

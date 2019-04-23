@@ -1,9 +1,10 @@
 .hits {
   &__wrapper {
-    padding: 30px 20px 150px;
+    padding: 30px 20px 30px;
   }
   &__title {
     font-size: $mobile-title-text;
+    text-align: center;
     text-transform: uppercase;
   }
   &__list {
@@ -64,7 +65,6 @@
     text-transform: uppercase;
     color: $secondary-color;
     i {
-      font-style: normal;
       color: $theme-bg;
     }
 

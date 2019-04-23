@@ -15,7 +15,6 @@
           dots: true,
           loop: true,
         });
-        console.log($slider);
       });
     }
   }
