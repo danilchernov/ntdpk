@@ -6,6 +6,9 @@
     const $close = $modal.find('[js-modal-close]');
     const $content = $modal.find('[js-modal-content]');
 
+    /**
+     * * Open .modal 
+    */
 
     $calls.each(function() {
       const $call = $(this);
@@ -18,6 +21,9 @@
       });
     });
 
+    /**
+     * * Close .modal 
+    */
     $close.on('click', (event) => {
       $content.removeClass('is-open');
       setTimeout(() => { 
@@ -43,46 +49,5 @@
     /**
      * TODO: Сделать событие для ESC
      */
-
-    const $calls = $('[js-call]');
-    $calls.each(function() {
-      const $call = $(this);
-      $call.on('click', (event) => {
-        event.preventDefault();
-        $modal.addClass('is-open');
-        setTimeout(() => {
-          $content.addClass('is-open');
-        }, 300);
-      });
-    });
   }
 }(jQuery));
-
-// ;(function($){
-//   const $calls = $('[js-call]');
-//   if ($calls.length != 0) {
-//     /* Check accurate click */
-//     $(document).on('click', (event) => {
-//       const $target = $(event.target);
-//       if ($target.hasClass('overlay'))  {
-//         $target.find('[js-modal]').removeClass('is-open');
-//         setTimeout(() => {
-//           $target.removeClass('is-open');
-//         }, 300);
-//       }
-//     });
-
-//     const $modal = $(['js-modal']);
-//     $modal.wrap('<div class="overlay"></div>')
-//     $calls.each(function() {
-//       const $call = $(this);
-//       $call.off('click').on('click', (event) => {
-//         event.preventDefault();
-//         $modal.parents('.overlay').addClass('is-open');
-//         setTimeout(() => {
-//           $modal.addClass('is-open')
-//         }, 300);
-//       });
-//     });
-//   }
-// }(jQuery));

@@ -55,7 +55,7 @@ body {
   &__header {
     position: fixed;
     width: 100%;
-    max-width: 320px;
+    max-width: $mobile-width;
 
     margin: 0 auto;
     z-index: 10;
@@ -65,5 +65,16 @@ body {
   }
   &__footer {
     margin-top: auto;
+  }
+}
+
+@include media($tablet-width) {
+  .body {
+    &__wrapper {
+      max-width: $tablet-width;
+    }
+    &__header {
+      max-width: $tablet-width;
+    }
   }
 }

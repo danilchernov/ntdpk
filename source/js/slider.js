@@ -4,7 +4,7 @@
   const $sliders = $('[js-slider]');
   if ($sliders.length != 0) {
     // let documentWidth = $(document).innerWidth();
-    let document = 1;
+    let documentWidth = 1;
     if (documentWidth < 768) {
       $sliders.each(function() {
         const $slider = $(this);

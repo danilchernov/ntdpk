@@ -8,3 +8,9 @@
   border: 2px solid $main-color;
   letter-spacing: 0.1em;
 }
+
+@include media($tablet-width) {
+  .logo {
+    font-size: 25px;
+  }
+}

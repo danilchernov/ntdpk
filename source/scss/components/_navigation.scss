@@ -14,6 +14,7 @@
     border-bottom: 2px solid #678fa8;
   }
   &__link {
+    position: relative;
     display: flex;
     flex: 0 1 100%;
     align-items: center;
@@ -26,6 +27,9 @@
     text-decoration: none;
     background-color: $theme-bg;
     user-select: none;
+    span {
+      z-index: 1;
+    }
     &--icon {
       span {
         margin-right: 10px;
@@ -44,5 +48,63 @@
   }
   &__icon {
     fill: $color-white;
+    z-index: 1;
+  }
+}
+
+@include media($tablet-width) {
+  .navigation {
+    &__item {
+      flex: 1 1 auto;
+      border-bottom: none;
+      &:not(:last-child) {
+        margin-right: 5px;
+      }
+    }
+    &__link {
+      padding: 7.5px 10px;
+      font-size: $tablet-navigation-text-size;
+      color: $main-color;
+      background-color: inherit;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -7px;
+        left: 5px;
+        width: calc(100% - 10px);
+        min-height: 4px;
+        background-color: $theme-bg;
+        z-index: 1;
+        opacity: 0;
+        transition: all 0.3s;
+      }
+      &--icon {
+        span {
+          margin-right: 0;
+        }
+      }
+      
+      &:hover,
+      &:focus {
+        outline: none;
+        background-color: $color-white;
+        &::before {
+          bottom: 0;
+          width: calc(100% - 10px);
+          opacity: 1;
+          background-color: $theme-bg-focus;
+        }
+      }
+      &:active {
+        color: rgba($main-color, 0.7);
+        background-color: $color-white;
+        &::before {
+          background-color: $theme-bg-active;
+        }
+      }
+    }
+    &__icon {
+      display: none;
+    }
   }
 }

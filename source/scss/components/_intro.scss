@@ -1,6 +1,5 @@
 .intro {
   background: url("../images/intro-bg@mobile.jpg") no-repeat 50% -55%;
-  background-size: auto auto;
 
   overflow: hidden;
   &__wrapper {
@@ -26,5 +25,31 @@
     max-width: 100%;
     color: $color-white;
     background-color: rgba($theme-bg, 0.5);
+  }
+}
+
+@include media($tablet-width) {
+  .intro {
+    background: url("../images/intro-bg@tablet.jpg") no-repeat 50% 25%;
+    background-size: auto auto;
+    &__wrapper {
+      justify-content: center;
+      padding: 100px 20px 300px;
+    }
+    &__title {
+      font-size: 36px;
+      margin-top: 0;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    &__side {
+      max-width: 500px;
+      padding: 0;
+      font-weight: $font-weight-bold;
+      color: $main-color;
+      text-align: center;
+      text-transform: uppercase;
+      background-color: rgba($color-white, 0);
+    }
   }
 }

@@ -20,7 +20,6 @@ module.exports = () => {
         console.log(e.message);
       })
     }))
-    .pipe($.debug({title: "src"}))
     .pipe($.concat('vendor.js'))
     .pipe($.if(!isDevelopment, $.uglify()))
     .pipe(gulp.dest(config.paths.js.build));

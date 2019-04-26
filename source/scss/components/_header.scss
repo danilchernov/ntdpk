@@ -1,6 +1,7 @@
 .header {
   &__wrapper {
     display: flex;
+    align-items: center;
     flex-flow: row wrap;
     padding: 0;
   }
@@ -104,5 +105,30 @@
     display: none;
     height: calc(100vh - 72px);
     background-color: rgba($color-black, 0.7);
+  }
+}
+
+@include media($tablet-width) {
+  .header {
+    &__wrapper {
+      padding: 15px 20px;
+      border-bottom: 2px solid $main-color;
+      background-color: $color-white;
+    }
+    &__toggle {
+      display: none;
+    }
+    &__side {
+      flex: 0 1 auto;
+      padding: 0;
+      border-bottom: none;
+    }
+    &__navigation {
+      display: block;
+      flex: 0 1 auto;
+      margin-left: auto;
+      height: auto;
+      background-color: rgba($color-white, 0);
+    }
   }
 }
