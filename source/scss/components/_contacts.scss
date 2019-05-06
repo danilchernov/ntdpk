@@ -61,3 +61,11 @@
     }
   }
 }
+
+@include media($tablet-width) {
+  .contacts {
+    &__list {
+      font-size: $tablet-text-size;
+    }
+  }
+}

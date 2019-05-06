@@ -30,3 +30,24 @@
     fill: $theme-bg;
   }
 }
+
+@include media($tablet-width) {
+  .demo {
+    &__wrapper {
+      align-items: center;
+      justify-content: center;
+      width: 505px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    &__row {
+      @include flex-column(1,2,0);
+      max-width: 280px;
+      font-size: $tablet-text-size;
+    }
+    &__title,
+    p {
+      text-align: left;
+    }
+  }
+}

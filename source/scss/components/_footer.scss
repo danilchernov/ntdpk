@@ -74,3 +74,51 @@
     z-index: 1;
   }
 }
+
+@include media($tablet-width) {
+  .footer {
+    &__contacts {
+      margin-bottom: 0;
+    }
+    &__socials {
+      position: absolute;
+      bottom: 30px;
+      right: 20px;
+    }
+    &__action {
+      position: absolute;
+      top: 30px;
+      right: 20px;
+      width: auto;
+    }
+  }
+}
+
+/* @include media($tablet-width) {
+  .footer {
+    &__wrapper {
+      padding-top: 106px;
+      align-items: flex-end;
+    }
+    &__logo {
+      position: absolute;
+      top: 30px;
+      margin-bottom: 0;
+    }
+    &__contacts {
+      flex: 1 1 0;
+      margin-right: 10px;
+      margin-bottom: 0;
+    }
+    &__action {
+      width: auto;
+      margin-left: auto;
+      margin-bottom: 0;
+    }
+    &__socials {
+      position: absolute;
+      right: 23px;
+      top: 30px;
+    }
+  }
+} */

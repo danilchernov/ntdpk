@@ -10,35 +10,88 @@
 }
 
 .edge {
+  display: flex;
   &__wrapper {
+    flex: 0 1 100%;
     display: flex;
     flex-flow: row wrap;
     text-align: center;
     padding: 0 15px;
   }
-  &__main {
-    flex: 0 1 100%;
-  }
-  &__image {
-    flex: 0 1 100%;
+  &__image { 
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    margin: 0 auto 10px;
+    margin: 0 auto;
     @include size(100px);
     background-color: $theme-bg;
   }
   &__icon {
     fill: $color-white;
   }
+  &__main {
+    width: 100%;
+    padding: 10px 0;
+    font-size: $mobile-text-size;
+    background-color: $color-white;
+  }
   &__title {
     margin-top: 0;
     margin-bottom: 10px;
     text-transform: uppercase;
   }
-  &__side {
-    padding: 0 20px;
-    font-size: $mobile-text-size;
+}
+
+@include media($tablet-width) {
+  .edges {
+    &__wrapper {
+      background: url("../images/presentation-bg-tablet@1x.jpg") 50% 50% no-repeat / cover;
+      background-attachment: fixed;
+    }
+    &__list {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      width: 505px;
+      margin: 0 auto -30px;
+      padding-left: 0;
+      list-style: none;
+      
+    }
+    &__item {
+      display: flex;
+      flex: 1 1 auto;
+      max-width: 245px;
+      margin-bottom: 30px;
+      &:not(:nth-child(even)) {
+        margin-right: 15px;
+      }
+    }
+  }
+  
+  .edge {
+    &__wrapper {
+      padding: 0;
+    }
+    &__title {
+      flex: 1 1 auto;
+      font-size: 14px;
+    }
+    &__main {
+      padding: 10px 5px;
+      font-size: $tablet-text-size;
+      // border: 2px solid $theme-bg;
+      // border-top: none;
+    }
+    &__image {
+      @include size(auto);
+      width: 100%;
+      padding: 30px 0;
+    }
+    &__icon {
+      display: block;
+      @include size(75px);
+    }
   }
 }
