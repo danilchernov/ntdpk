@@ -31,3 +31,15 @@
     transition: fill 0.3s;
   }
 }
+
+@include media($desktop-width) {
+  .socials {
+    &__link {
+      &:hover {
+        .socials__icon {
+          fill: $theme-bg-focus;
+        }
+      }
+    }
+  }
+}

@@ -1,16 +1,70 @@
 .logo {
-  display: block;
-  padding: 6px 5px;
-  font-size: 20px;
-  font-weight: $font-weight-regular;
-  color: $main-color;
+  position: relative;
+  display: flex;
   text-decoration: none;
-  border: 2px solid $main-color;
-  letter-spacing: 0.1em;
+  &__inner {
+    width: 100%;
+    padding: 6px 5px;
+    font-size: 20px;
+    font-weight: $font-weight-regular;
+    color: $main-color;
+    text-decoration: none;
+    border: 2px solid $main-color;
+    letter-spacing: 0.1em;
+    transition: all 0.3s linear;
+    z-index: 3;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0;
+    background-color: $theme-bg;
+    transition: all 0.3s linear;
+    z-index: 0;
+  }
+  &:focus {
+    &::before {
+      top: 0;
+      height: 100%;
+    }
+    .logo__inner {
+      color: $secondary-color;
+    }
+  }
+  &:active {
+    &::before {
+      top: 0;
+      height: 100%;
+      background-color: $theme-bg-active;
+    }
+    .logo__inner {
+      color: $secondary-color;
+    }
+  }
 }
 
 @include media($tablet-width) {
   .logo {
-    font-size: 25px;
+    &__inner {
+      font-size: 25px;
+    }
+  }
+}
+
+@include media($desktop-width) {
+  .logo {
+    &:hover {
+      &::before {
+        top: 0;
+        height: 100%;
+      }
+      .logo__inner {
+        color: $secondary-color;
+      }
+    }
   }
 }

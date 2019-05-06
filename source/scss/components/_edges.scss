@@ -81,8 +81,6 @@
     &__main {
       padding: 10px 5px;
       font-size: $tablet-text-size;
-      // border: 2px solid $theme-bg;
-      // border-top: none;
     }
     &__image {
       @include size(auto);
@@ -92,6 +90,31 @@
     &__icon {
       display: block;
       @include size(75px);
+    }
+  }
+}
+
+@include media($desktop-width) {
+  .edges {
+    &__list {
+      width: 600px;
+      margin-bottom: -25px;
+    }
+    &__item {
+      max-width: 275px;
+      margin-bottom: 25px;
+      &:not(:nth-child(even)) {
+        margin-right: 25px;
+      }
+    }
+  }
+
+  .edge {
+    &__main {
+      padding: 20px;
+    }
+    &__title {
+      font-size: $tablet-title-text;
     }
   }
 }

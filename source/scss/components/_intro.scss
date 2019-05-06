@@ -54,3 +54,14 @@
     }
   }
 }
+
+@include media($desktop-width) {
+  .intro {
+    &__wrapper {
+      font-size: $tablet-text-size;
+    }
+    &__side {
+      max-width: 600px;
+    }
+  }
+}

@@ -51,3 +51,14 @@
     }
   }
 }
+
+@include media($desktop-width) {
+  .demo {
+    &__wrapper {
+      width: 600px;
+    }
+    &__title {
+      font-size: $desktop-title-text;
+    }
+  }
+}

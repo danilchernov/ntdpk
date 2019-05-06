@@ -1,7 +1,7 @@
 /* Box sizes settings */
 $mobile-width: 320px;
 $tablet-width: 768px;
-$desktop-width: 1210px;
+$desktop-width: 1024px;
 $max-width: $desktop-width;
 $padding: 20px;
 $margin: 10px;
@@ -55,7 +55,9 @@ $mobile-text-size: $font-size;
 
 $tablet-navigation-text-size: 14px;
 $tablet-text-size: 16px;
+$tablet-title-text: 16px;
 
+$desktop-title-text: 20px;
 
 /**
   * *Colors

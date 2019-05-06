@@ -78,3 +78,14 @@ body {
     }
   }
 }
+
+@include media($desktop-width) {
+  .body {
+    &__wrapper {
+      max-width: $max-width;
+    }
+    &__header {
+      max-width: $max-width;
+    }
+  }
+}

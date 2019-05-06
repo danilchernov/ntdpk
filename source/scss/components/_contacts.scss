@@ -69,3 +69,19 @@
     }
   }
 }
+
+@include media($desktop-width) {
+  .contacts {
+    &__link {
+      &:hover {
+        color: $theme-bg-focus;
+        outline: none;
+        &::before {
+          width: 100%;
+          left: 0;
+          background-color: $theme-bg-focus;
+        }
+      }
+    }
+  }
+}
