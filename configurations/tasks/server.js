@@ -10,7 +10,9 @@
       server: {
         baseDir: 'build',
         notify: false,
-        ui: false
+        ui: false,
+        online: true,
+        tunnel: true
       }
     });
     bs.watch(config.paths.build).on('change', bs.reload);

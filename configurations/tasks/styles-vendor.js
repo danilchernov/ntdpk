@@ -3,14 +3,19 @@
 const $ = require('gulp-load-plugins')({lazy: true});
 
 const gulp = require('gulp');
-const mainNpmFiles = require('main-npm-files');
+const vendorFiles = require('main-yarn-files');
 const config = require('../config');
 
 const cssnano = require('cssnano');
 const autoprefixer = require('autoprefixer');
 
 module.exports = () => {
-  return gulp.src(mainNpmFiles(config.paths.css.source.vendor))
+  return gulp.src(vendorFiles(config.paths.css.source.vendor,{
+    paths: {
+      modulesFolder: './node_modules',
+      jsonFile: './package.json'
+    }
+  }))
   .pipe($.plumber({
     errorHandler: $.notify.onError((e) => {
       console.log(e.message);

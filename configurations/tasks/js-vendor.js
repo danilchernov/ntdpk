@@ -3,17 +3,17 @@
 const $ = require('gulp-load-plugins')({lazy: true});
 
 const gulp = require('gulp');
+const vendorFiles = require('main-yarn-files');
 const config = require('../config');
-const mainNpmFiles = require('main-npm-files');
 
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
 module.exports = () => {
-  return gulp.src(mainNpmFiles(config.paths.js.source.vendor,{
-    nodeModules: './node_modules',
-    pkgJson: './package.json',
-    onlySpecified: true,
-    onlyMain: true
+  return gulp.src(vendorFiles(config.paths.js.source.vendor,{
+    paths: {
+      modulesFolder: './node_modules',
+      jsonFile: './package.json'
+    }
   }))
     .pipe($.plumber({
       errorHandler: $.notify.onError((e) => {
