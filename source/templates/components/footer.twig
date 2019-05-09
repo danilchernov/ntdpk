@@ -61,7 +61,7 @@
         ] %}
         {% for item in socials %}
           <li class="socials__item">
-            <a href="#" class="socials__link" aria-label="{{  }}" title{="{  }}">
+            <a href="#" class="socials__link" aria-label="{{ item.aria}}" title="{{ item.title }}">
               <svg class="socials__icon"
                   viewBox="{{ item.icon.viewBox }}"
                   width="{{ item.icon.width }}"
