@@ -5,7 +5,7 @@
 {% block body %}
 
 
-{% block preloader %}
+{# {% block preloader %}
   <div class="preloader" js-page-preloader>
     <div class="preloader__inner">
       <div></div>
@@ -20,7 +20,7 @@
       <div></div>
     </div>
   </div>
-{% endblock %}
+{% endblock %} #}
 
 {% block scrollUp %}
 
@@ -135,7 +135,7 @@
       {% set hits = [
         { 
           "href": "#",
-          "name": "Террасная доска ‎Эконом <i>«</i>Эконом<i>»</i>",
+          "name": "Террасная доска ‎<i>«</i>Эконом<i>»</i>",
           "picture": {
             "raster": "images/hit-1.png",
             "webp": "images/hit-1.webp",
@@ -199,33 +199,36 @@
   </div>
 </section>
 
+
 <div class="modal" js-modal>
   <div class="modal__wrapper is-open" js-modal-content>
-    <h2 class="modal__title">Форма обратного связи</h2>
-    <button class="modal__close " type="button" aria-label="Кнопка для закрытия модального окна" js-modal-close>
+    <button class="modal__toggle " type="button" aria-label="Кнопка для закрытия модального окна" js-modal-close>
       <span></span>
     </button>
-    <form class="form" action="#" method="POST">
-      <div class="form__wrapper">
-        <div class="form__row">
-          <label class="form__label">
-            <input type="text" class="form__input" name="name" placeholder="Имя и фамилию">
-          </label>
-        </div>
-        <div class="form__row">
-          <label class="form__label">
-            <input type="email" class="form__input" name="email" placeholder="Электронная почта">
-          </label>
-          <label class="form__label">
-            <input type="text" class="form__input" name="name" placeholder="Номер телефона">
-          </label>
-        </div>
-        <div class="form__row">
-          <label class="form__label">
-            <textarea class="form__input form__input--textarea" name="comment" cols="30" rows="6" placeholder="Комментарий для менеджера"></textarea>
-          </label>
-        </div>
-        <div class="form__row">
+    <form class="modal__call-form call-form" action="#" method="POST">
+      <div class="call-form__wrapper">
+        <h2 class="call-form__title">Форма обратной связи</h2>
+        <ul class="call-form__fieldsets">
+          <li class="call-form__fieldset">
+            <label class="call-form__label">
+              <input type="text" class="call-form__input" name="name" placeholder="Имя и фамилия">
+            </label>
+          </li>
+          <li class="call-form__fieldset">
+            <label class="call-form__label call-form__label--tablet">
+              <input type="email" class="call-form__input" name="email" placeholder="Электронная почта">
+            </label>
+            <label class="call-form__label call-form__label--tablet">
+              <input type="text" class="call-form__input" name="name" placeholder="Номер телефона">
+            </label>
+          </li>
+          <li class="call-form__fieldset">
+            <label class="call-form__label">
+              <textarea class="call-form__input call-form__input--textarea" name="comment" cols="30" rows="6" placeholder="Комментарий для менеджера"></textarea>
+            </label>
+          </li>
+        </ul>
+        <div class="call-form__side">
           {{ button('Отправить заявку', {type: "submit",mod: "_full", js: "js-form-submit", aria: "Кнопка для отправки формы обратной связи"}) }}
         </div>
       </div>

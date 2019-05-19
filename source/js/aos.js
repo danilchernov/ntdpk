@@ -1,3 +1,5 @@
 ;(function(AOS) {
-  AOS.init();
+  AOS.init({
+    once: true
+  });
 }(AOS));

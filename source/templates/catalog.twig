@@ -1,0 +1,53 @@
+{% extends "components/base.twig" %}
+{% from "mock/ui.twig" import picture, svg,button, input, toggle, radio, checkbox %}
+
+{% block title %}Главная страница{% endblock %}
+{% block body %}
+
+{# {% block preloader %}
+  <div class="preloader" js-page-preloader>
+    <div class="preloader__inner">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+{% endblock %} #}
+
+{# {% block scrollUp %}
+
+<a class="scroll scroll_up" href="#" js-scroll-up aria-label="Пролистывание в самоё начало страницы" title="Пролистнуть страницу вверх">
+  <svg class="scroll__icon"
+      viewBox="0 0 86.001 86.001"
+      width="25"
+      height="25">
+    <use xlink:href="images/inline-svg.svg#icon-arrow-down"></use>
+  </svg>
+</a>
+
+{% endblock %} #}
+
+<section class="intro intro_inner block">
+  <div class="intro__wrapper block__wrapper">
+    <h1 class="intro__title">Каталог с продукцией</h1>
+    <p class="intro__side">Производим древесно-композитный декинг высокого качества: террасную доску, сайдинг и погонаж в размер заказчика</p>
+  </div>
+  <a class="intro__scroll scroll scroll_down" href="#" js-scroll-down aria-label="Пролистнуть страницу вниз" title="Пролистнуть страницу ниже">
+    <svg class="scroll__icon"
+        viewBox="0 0 86.001 86.001"
+        width="25"
+        height="25">
+      <use xlink:href="images/inline-svg.svg#icon-arrow-down"></use>
+    </svg>
+  </a>
+</section>
+
+
+{% endblock %}

@@ -13,6 +13,7 @@
   align-items: center;
   @include size(50px);
   text-decoration: none;
+  box-shadow: 0 0 0 2px rgba($main-color, 1);
   transition: all 0.3s;
   
   &__icon {
@@ -45,7 +46,6 @@
     background-color: rgba($theme-bg, 1);
     box-shadow: 0 0 0 2px rgba($main-color, 1);
     opacity: 0;
-    transition: all 0.3s;
     .scroll__icon {
       animation: none;
       transform: rotate(180deg);
@@ -67,12 +67,12 @@
 
 @include media($tablet-width) {
   .scroll {
+    box-shadow: 0 0 0 4px rgba($main-color, 0.9);
     &_down {
       display: flex;
     }
     &_up {
       bottom: 100px;
-      box-shadow: 0 0 0 4px rgba($main-color, 0.9);
       &.is-active {
         right: 22px;
       }
