@@ -4,7 +4,7 @@
 {% block title %}Главная страница{% endblock %}
 {% block body %}
 
-{# {% block preloader %}
+{% block preloader %}
   <div class="preloader" js-page-preloader>
     <div class="preloader__inner">
       <div></div>
@@ -19,9 +19,9 @@
       <div></div>
     </div>
   </div>
-{% endblock %} #}
+{% endblock %}
 
-{# {% block scrollUp %}
+{% block scrollUp %}
 
 <a class="scroll scroll_up" href="#" js-scroll-up aria-label="Пролистывание в самоё начало страницы" title="Пролистнуть страницу вверх">
   <svg class="scroll__icon"
@@ -32,12 +32,11 @@
   </svg>
 </a>
 
-{% endblock %} #}
+{% endblock %}
 
-<section class="intro intro_inner block">
+<section class="intro intro--inner block" js-intro>
   <div class="intro__wrapper block__wrapper">
-    <h1 class="intro__title">Каталог с продукцией</h1>
-    <p class="intro__side">Производим древесно-композитный декинг высокого качества: террасную доску, сайдинг и погонаж в размер заказчика</p>
+    <h1 class="intro__title">Каталог товаров</h1>
   </div>
   <a class="intro__scroll scroll scroll_down" href="#" js-scroll-down aria-label="Пролистнуть страницу вниз" title="Пролистнуть страницу ниже">
     <svg class="scroll__icon"
@@ -48,6 +47,141 @@
     </svg>
   </a>
 </section>
+
+<section class="catalog block">
+  <div class="catalog__wrapper block__wrapper">
+    <ul class="catalog__list">
+      <li class="catalog__item">
+        <div class="good">
+          <div class="good__wrapper">
+            <div class="good__side">
+              <h3 class="good__title">
+                Террасная доска <i>«</i>‎Эконом<i>»</i>
+              </h3>
+              <div class="good__image">
+                <picture>
+                  <source type="image/webp"
+                          srcset="images/good-1-test.webp">
+                
+                  <img class="good__img"
+                      src="images/good-1-test.jpg"
+                      alt="images/good-1-test.jpg|webp">
+                </picture>
+              </div>
+              <div class="good__palette palette">
+                <h4 class="palette__title good__subtitle">Выберите цвет изделия:</h4>
+                <ul class="palette__list">
+                  <li class="palette__item">
+                    <label class="palette__label">
+                      <input class="visually-hidden palette__input" type="checkbox" name="colors" value="color1">
+                      <span class="palette__color palette__color--red"></span>
+                    </label>
+                  </li>
+                  <li class="palette__item">
+                    <label class="palette__label">
+                      <input class="visually-hidden palette__input" type="checkbox" name="colors" value="color1">
+                      <span class="palette__color palette__color--blue"></span>
+                    </label>
+                  </li>
+                  <li class="palette__item">
+                    <label class="palette__label">
+                      <input class="visually-hidden palette__input" type="checkbox" name="colors" value="color1">
+                      <span class="palette__color palette__color--green"></span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="good__main">
+              <p class="good__description">Изделие предназначено для обустройства частных объектов. Обладает высокой стойкостью к истиранию, воздействию влаги и к ультрафиолетовомогу излучению.</p>
+              <ul class="good__properties">
+                <li class="good__property">
+                  Размеры, мм — <span>140 * 28</span>
+                </li>
+                <li class="good__property">
+                  Вес, м<sup>2</sup> — <span>19.5 кг</span>
+                </li>
+                <li class="good__property">
+                  Вес, пог. м — <span>2.8 кг</span>
+                </li>
+              </ul>
+              <div class="good__manipulation manipulation">
+                <ul class="manipulation__list">
+                  <li class="manipulation__item">
+                    <h4 class="manipulation__title">Без обработки</h4>
+                    <label class="manipulation__label">
+                      <input class="visually-hidden manipulation__input" type="radio" name="manipulation" value="withOut">
+                      <span class="manipulation__sensor"></span>
+                    </label>
+                  </li>
+                  <li class="manipulation__item">
+                    <h4 class="manipulation__title">Шлифовонная</h4>
+                    <label class="manipulation__label">
+                      <input class="visually-hidden manipulation__input" type="radio" name="manipulation" value="grinding">
+                      <span class="manipulation__sensor"></span>
+                    </label>
+                  </li>
+                  <li class="manipulation__item">
+                    <h4 class="manipulation__title">Фактура дерева</h4>
+                    <label class="manipulation__label">
+                      <input class="visually-hidden manipulation__input" type="radio" name="manipulation" value="treeFacture">
+                      <span class="manipulation__sensor"></span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <ul class="good__properties">
+                <li class="good__property">
+                  Цена, пог.м — <span class="good__price">267 &#8381;</span>
+                </li>
+                <li class="good__property">
+                  Цена, м<sup>2</sup> — <span class="good__price">1872 &#8381;</span>
+                </li>
+              </ul>
+              {{ button("Предзаказ", {mod: "_full _no-shadow _margin-top_auto"})}}
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<div class="modal" js-modal>
+  <div class="modal__wrapper is-open" js-modal-content>
+    <button class="modal__toggle " type="button" aria-label="Кнопка для закрытия модального окна" js-modal-close>
+      <span></span>
+    </button>
+    <form class="modal__call-form call-form" action="#" method="POST">
+      <div class="call-form__wrapper">
+        <h2 class="call-form__title">Форма обратной связи</h2>
+        <ul class="call-form__fieldsets">
+          <li class="call-form__fieldset">
+            <label class="call-form__label">
+              <input type="text" class="call-form__input" name="name" placeholder="Имя и фамилия">
+            </label>
+          </li>
+          <li class="call-form__fieldset">
+            <label class="call-form__label call-form__label--tablet">
+              <input type="email" class="call-form__input" name="email" placeholder="Электронная почта">
+            </label>
+            <label class="call-form__label call-form__label--tablet">
+              <input type="text" class="call-form__input" name="name" placeholder="Номер телефона">
+            </label>
+          </li>
+          <li class="call-form__fieldset">
+            <label class="call-form__label">
+              <textarea class="call-form__input call-form__input--textarea" name="comment" cols="30" rows="6" placeholder="Комментарий для менеджера"></textarea>
+            </label>
+          </li>
+        </ul>
+        <div class="call-form__side">
+          {{ button('Отправить заявку', {type: "submit",mod: "_full", js: "js-form-submit", aria: "Кнопка для отправки формы обратной связи"}) }}
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
 
 
 {% endblock %}

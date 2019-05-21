@@ -1,7 +1,6 @@
 .intro {
   position: relative;
   background: url("../images/intro-bg@mobile.jpg") no-repeat 50% -55%;
-
   overflow: hidden;
   &__wrapper {
     display: flex;
@@ -33,7 +32,19 @@
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-
+  }
+  &--inner {
+    background: url("../images/intro-bg-catalog@mobile.jpg") no-repeat 50% 50%;
+    height: 350px;
+    .intro__wrapper {
+      height: inherit;
+    }
+    .intro__title {
+      align-self: flex-end;
+      color: $main-color;
+      margin-top: 0;
+      margin-bottom: 60px;
+    }
   }
 }
 
@@ -41,10 +52,10 @@
   .intro {
     background: url("../images/intro-bg@tablet.jpg") no-repeat 50% 25%;
     background-size: auto auto;
-    height: 625px;
+    height: 500px;
     &__wrapper {
       justify-content: center;
-      padding: 100px 20px 300px;
+      padding: 100px 20px 0;
     }
     &__title {
       font-size: 36px;
@@ -60,6 +71,13 @@
       text-align: center;
       text-transform: uppercase;
       background-color: rgba($color-white, 0);
+    }
+    &--inner {
+      background: url("../images/intro-bg-catalog@tablet.jpg") no-repeat 50% 25%;
+      .intro__title {
+        color: $main-color;
+        margin-bottom: 115px;
+      }
     }
   }
 }

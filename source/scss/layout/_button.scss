@@ -84,3 +84,13 @@
 .button_full {
   width: 100%;
 }
+
+.button_no-shadow {
+  .button__content {
+    box-shadow: none;
+  }
+}
+
+.button_margin-top_auto {
+  margin-top: auto;
+}

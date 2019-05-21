@@ -38,7 +38,7 @@
   &_up {
     position: fixed;
     display: flex;
-    bottom: 30px;
+    bottom: 32px;
     right: -9999px;
     @include size(46px);
     padding: 3px;
@@ -72,7 +72,7 @@
       display: flex;
     }
     &_up {
-      bottom: 100px;
+      bottom: 102px;
       &.is-active {
         right: 22px;
       }

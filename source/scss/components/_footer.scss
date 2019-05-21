@@ -3,6 +3,7 @@
     display: flex;
     flex-flow: row wrap;
     padding: 30px 20px;
+    border-top: 2px solid $main-color;
   }
   &__logo {
     flex: none;

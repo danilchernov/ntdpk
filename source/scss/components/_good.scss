@@ -1,0 +1,103 @@
+.good {
+  &__wrapper {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  &__side {
+    flex-basis: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+  &__title {
+    margin: 0;
+    padding: 10px;
+    color: $secondary-color;
+    text-transform: uppercase;
+    background-color: $theme-bg;
+    i {
+      font-weight: bold;
+      color: $main-color;
+    }
+  }
+  &__image {
+    margin-bottom: 10px;
+  }
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  &__main {
+    flex-basis: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    padding: 0 10px;
+    color: $main-color;
+  }
+  &__properties {
+    padding-left: 0;
+    margin: 0 0 10px;
+    list-style: none;
+    &:last-of-type {
+      margin-bottom: 20px;
+    }
+  }
+  &__property {
+    color: $main-color;
+    text-transform: uppercase;
+    font-size: $mobile-text-size;
+    font-weight: $font-weight-bold;
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+/*     span {
+      color: $theme-bg;
+      &.good__price {
+        font-size: 20px;
+      }
+    } */
+  }
+  &__manipulation {
+    margin-bottom: 10px;
+  }
+}
+
+@include media($tablet-width) {
+  .good {
+    &__wrapper {
+
+    }
+    &__side {
+      flex-basis: 50%;
+      margin-bottom: 0;
+      padding-bottom: 20px;
+    }
+    &__image {
+      margin-bottom: 20px;
+    }
+    &__title {
+      padding: 10px;
+      font-size: $tablet-title-text;
+    }
+    &__main {
+      flex-basis: 50%;
+      padding: 0 20px 20px;
+    }
+    &__description {
+      font-size: $tablet-text-size;
+    }
+  }
+}
+
+@include media($desktop-width) {
+  .good {
+    &__side {
+      flex: 1 1 auto;
+    }
+    &__main {
+      flex: 1 1 60%;
+    }
+  }
+}

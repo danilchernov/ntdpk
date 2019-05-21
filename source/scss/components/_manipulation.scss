@@ -1,0 +1,63 @@
+.manipulation {
+  &__list {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0;
+    padding-left: 0;
+    list-style-type: none;
+  }
+  &__item {
+    @include flex-column(1,1,0);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+  &__title {
+    margin: 0;
+    color: $main-color;
+    text-transform: uppercase;
+    font-size: $mobile-text-size;
+    font-weight: $font-weight-bold;
+  }
+  &__input {
+    &:checked + .manipulation__sensor {
+      &::before {
+        left: 50%;
+        background-color: rgba($theme-bg, 1);
+      }
+    }
+  }
+  &__sensor {
+    position: relative;
+    display: block;
+    @include size(40px, 20px);
+    background-color: #dddddd;
+    border-radius: 0;
+    &::before {
+      content: "";
+      position: absolute;
+      @include size(50%, 100%);
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      background-color: rgba($theme-bg, 0);
+      border: 3px solid $theme-bg;
+      border-radius: 0;
+      transition: all 0.3s;
+    }
+  } 
+}
+
+/* @include media($tablet-width) {
+  .manipulation {
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+} */
