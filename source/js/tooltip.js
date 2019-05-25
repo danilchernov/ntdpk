@@ -1,6 +1,7 @@
 ;(function($) {
   $('.tooltip').tooltipster({
     theme: 'tooltipster-punk',
-    trigger: 'click'
+    trigger: 'click',
+    zIndex: 3
   });
 }(jQuery));

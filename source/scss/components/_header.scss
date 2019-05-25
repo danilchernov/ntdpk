@@ -1,9 +1,11 @@
 .header {
+  background-color: $color-white;
   &__wrapper {
     display: flex;
     align-items: center;
     flex-flow: row wrap;
     padding: 0;
+    max-width: 100%;
   }
 
   &__side {
@@ -100,8 +102,9 @@
       }
     }
   }
+  
   &__navigation {
-    flex: 0 1 100%;
+    width: 100%;
     display: none;
     height: calc(100vh - 72px);
     background-color: rgba($color-black, 0.7);
@@ -110,9 +113,9 @@
 
 @include media($tablet-width) {
   .header {
+    border-bottom: 2px solid $main-color;
     &__wrapper {
       padding: 15px 20px;
-      border-bottom: 2px solid $main-color;
       background-color: $color-white;
     }
     &__toggle {
@@ -125,10 +128,18 @@
     }
     &__navigation {
       display: block;
-      flex: 0 1 auto;
+      width: auto;
       margin-left: auto;
       height: auto;
       background-color: rgba($color-white, 0);
+    }
+  }
+}
+
+@include media($desktop-width) {
+  .header {
+    &__wrapper {
+      max-width: $max-width;
     }
   }
 }

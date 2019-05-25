@@ -1,12 +1,15 @@
 .good {
-  flex: 1 1 auto;
+  flex: 1 1 100%;
   display: flex;
   &__wrapper {
     display: flex;
     flex-flow: column wrap;
+    width: 100%;
     box-shadow: 3px 3px 5px 6px rgba($theme-bg, 0.2);
   }
   &__side {
+    display: flex;
+    flex-flow: column wrap;
     width: 100%;
   }
   &__title {
@@ -39,11 +42,12 @@
   }
   &__palette {
     width: 100%;
+    margin-top: auto;
     background-color: $theme-bg;
   }
   &__main {
     width: 100%;
-    flex: 2 1 auto;
+    flex: 1 1 auto;
     display: flex;
     flex-flow: row wrap;
     padding: 10px;
@@ -109,24 +113,24 @@
       width: 300px;
       height: 215px;
     }
-  }
-}
-
-/* @include media($tablet-width) {
-  .good {
-    &__description {
-      font-size: $tablet-text-size;
-    }
-  }
-}
-
-@include media($desktop-width) {
-  .good {
-    &__side {
-      flex: 1 1 auto;
+    &__title {
+      padding: 10px 20px; 
+      i {
+        font-size: 20px;
+      }
     }
     &__main {
-      flex: 1 1 60%;
+      padding: 20px;
+    }
+    &__properties {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+    &__property {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
     }
   }
-} */
+}

@@ -1,5 +1,6 @@
 .map {
   &__wrapper {
+    max-width: 100%;
     padding: 30px 20px;
     background-color: $theme-bg;
   }
@@ -16,8 +17,11 @@
 @include media($tablet-width) {
   .map {
     &__wrapper {
-      padding: 30px 0 0;
+      padding: 0;
       background-color: rgba($secondary-color, 0);
+    }
+    &__container {
+      height: 500px;
     }
   }
 }

@@ -25,7 +25,89 @@
         {% endblock %}
       </div>
       <main class="body__content">
+        {# Preloader #}
+        {% block preloader %}
+          <div class="preloader" js-page-preloader>
+            <div class="preloader__inner">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        {% endblock %}
+
+        {# Fixed Buttons #}
+        {% block scrollUp %}
+        <a class="scroll scroll_up" href="#" js-scroll-up aria-label="Пролистывание в самоё начало страницы" title="Пролистнуть страницу вверх">
+          <svg class="scroll__icon"
+              viewBox="0 0 86.001 86.001"
+              width="25"
+              height="25">
+            <use xlink:href="images/inline-svg.svg#icon-arrow-down"></use>
+          </svg>
+        </a>
+        {% endblock %}
+
+        {% block scrollCall %}
+        <a class="scroll scroll_tel" href="#" js-scroll-up js-call aria-label="Кнопка вызова для формы обратной связи" title="Вызвать форму обратной связи">
+          <svg class="scroll__icon"
+              viewBox="0 0 86.001 86.001"
+              width="25"
+              height="25">
+            <use xlink:href="images/inline-svg.svg#icon-call"></use>
+          </svg>
+        </a>
+        {% endblock %}
+
+        {# Main Content Block #}
         {% block body %}{% endblock %}
+
+        {# Modal #}
+        {% block modal %}
+          <div class="modal" js-modal>
+            <div class="modal__wrapper is-open" js-modal-content>
+              <button class="modal__toggle " type="button" aria-label="Кнопка для закрытия модального окна" js-modal-close>
+                <span></span>
+              </button>
+              <form class="modal__call-form call-form" action="#" method="POST">
+                <div class="call-form__wrapper">
+                  <h2 class="call-form__title">Форма обратной связи</h2>
+                  <ul class="call-form__fieldsets">
+                    <li class="call-form__fieldset">
+                      <label class="call-form__label">
+                        <input type="text" class="call-form__input" name="name" placeholder="Имя и фамилия">
+                      </label>
+                    </li>
+                    <li class="call-form__fieldset">
+                      <label class="call-form__label call-form__label--tablet">
+                        <input type="email" class="call-form__input" name="email" placeholder="Электронная почта">
+                      </label>
+                      <label class="call-form__label call-form__label--tablet">
+                        <input type="text" class="call-form__input" name="name" placeholder="Номер телефона">
+                      </label>
+                    </li>
+                    <li class="call-form__fieldset">
+                      <label class="call-form__label">
+                        <textarea class="call-form__input call-form__input--textarea" name="comment" cols="30" rows="6" placeholder="Комментарий для менеджера"></textarea>
+                      </label>
+                    </li>
+                  </ul>
+                  <div class="call-form__side">
+                    {{ button('Отправить заявку', {type: "submit",mod: "_full", js: "js-form-submit", aria: "Кнопка для отправки формы обратной связи"}) }}
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        
+        {% endblock %}
       </main>
       <div class="body__footer">
         {% block footer %}

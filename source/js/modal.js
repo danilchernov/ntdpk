@@ -12,7 +12,7 @@
 
     $calls.each(function() {
       const $call = $(this);
-      $call.on('click', (event) => {
+      $call.off('click.modal').on('click.modal', (event) => {
         event.preventDefault();
         $modal.addClass('is-open');
         setTimeout(() => {
@@ -24,7 +24,7 @@
     /**
      * * Close .modal 
     */
-    $close.on('click', (event) => {
+    $close.off('click.modal.close').on('click.modal.close', (event) => {
       $content.removeClass('is-open');
       setTimeout(() => { 
         $modal.removeClass('is-open');

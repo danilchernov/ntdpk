@@ -1,5 +1,6 @@
 .edges {
   &__wrapper {
+    max-width: 100%;
     padding: 30px 20px;
   }
   &__list {
@@ -12,9 +13,9 @@
 .edge {
   display: flex;
   &__wrapper {
-    flex: 0 1 100%;
+    width: 100%;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     text-align: center;
     padding: 0 15px;
   }
@@ -31,7 +32,7 @@
     fill: $color-white;
   }
   &__main {
-    width: 100%;
+    flex: 1 1 auto;
     padding: 10px 0;
     font-size: $mobile-text-size;
     background-color: $color-white;
@@ -46,8 +47,9 @@
 @include media($tablet-width) {
   .edges {
     &__wrapper {
-      background: url("../images/presentation-bg-tablet@1x.jpg") 50% 50% no-repeat / cover;
-      background-attachment: fixed;
+      // background: url("../images/presentation-bg-tablet@1x.jpg") 50% 50% no-repeat / cover;
+      // background-attachment: fixed;
+      background-color: rgba(indigo, 0.3);
     }
     &__list {
       display: flex;
@@ -79,11 +81,11 @@
       font-size: 14px;
     }
     &__main {
-      padding: 10px 5px;
+      padding: 15px 10px;
       font-size: $tablet-text-size;
     }
     &__image {
-      @include size(auto);
+      @include size(auto, 135px);
       width: 100%;
       padding: 30px 0;
     }

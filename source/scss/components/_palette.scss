@@ -30,86 +30,13 @@
   }
 }
 
-/* .palette {
-
-  &__item {
-    @include size(20px);
-    &:not(:last-child) {
-      margin-right: 10px;
+@include media($desktop-width) {
+  .palette {
+    &__wrapper {
+      padding: 20px 10px;
     }
-  }
-  &__label {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-  &__input {
-    &:checked + .palette__color {
-      &--red {
-        &::before {
-          width: 100%;
-          height: 100%;
-          max-height: 100%;
-          background-color: red;
-          border-radius: 0;
-        }
-      }
-      &--blue {
-        &::before {
-          width: 100%;
-          height: 100%;
-          max-height: 100%;
-          background-color: blue;
-          border-radius: 0;
-        }
-      }
-      &--green {
-        &::before {
-          width: 100%;
-          height: 100%;
-          max-height: 100%;
-          background-color: green;
-          border-radius: 0;
-        }
-      }
-    }
-  }
-  &__color {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-width: 3px;
-    border-style: solid;
-    transition: all 0.3s;
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      bottom: auto;
-      transform: translate(-50%, -50%);
-      width: 0;
-      height: auto;
-      max-height: 0;
-      border-radius: 50%;
-      overflow: hidden;
-      transition: all 0.3s;
-    }
-    &--red {
-      border-color: red;
-    }
-    &--blue {
-      border-color: blue;
-    }
-    &--green {
-      border-color: green;
+    &__title {
+      font-size: $tablet-title-text;
     }
   }
 }
-
-@include media($tablet-width) {
-  .palette {
-    padding: 0 20px;
-  }
-} */

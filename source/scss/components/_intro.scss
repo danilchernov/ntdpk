@@ -1,12 +1,12 @@
 .intro {
   position: relative;
-  background: url("../images/intro-bg@mobile.jpg") no-repeat 50% -55%;
+  background: url("../images/intro-bg@mobile.jpg") no-repeat 70% 35%;
   overflow: hidden;
   &__wrapper {
     display: flex;
     flex-flow: row wrap;
     padding: 85px 0 0;
-
+    max-width: 100%;
     font-size: $mobile-text-size;
     color: $secondary-color;
   }
@@ -24,7 +24,7 @@
     padding: 20px 20px;
     max-width: 100%;
     color: $color-white;
-    background-color: rgba($theme-bg, 0.5);
+    background-color: rgba($theme-bg, 0.8);
   }
 
   &__scroll {
@@ -45,6 +45,12 @@
       margin-top: 0;
       margin-bottom: 60px;
     }
+  }
+}
+
+@include media(550px) {
+  .intro {
+    background-position: 45% 35%;
   }
 }
 
@@ -84,6 +90,7 @@
 
 @include media($desktop-width) {
   .intro {
+    background-size: cover;
     &__wrapper {
       font-size: $tablet-text-size;
     }

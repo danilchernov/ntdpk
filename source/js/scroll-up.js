@@ -25,7 +25,14 @@
         event.preventDefault();
         $('body,html').animate({scrollTop:0},800);
       }
-
     });
+
+    /* 
+      !A simple solution to disable events on a button with a phone, but deadlines are on, fix it in any convenient case or create it (Expand scroll to 2 parts: Function to display the element and function with scroll) 
+    */
+
+    $($scrolls[1]).off('click.scrollUp');
+
+    
   }
 }(jQuery));

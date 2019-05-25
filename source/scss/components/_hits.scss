@@ -94,6 +94,7 @@
 @include media($tablet-width) {
   .hits {
     &__wrapper {
+      max-width: 100%;
       background-color: $theme-bg;
     }
     &__list {
