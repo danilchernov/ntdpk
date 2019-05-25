@@ -5,7 +5,7 @@
 {% block body %}
 
 {% block preloader %}
-  <div class="preloader" js-page-preloader>
+{#   <div class="preloader" js-page-preloader>
     <div class="preloader__inner">
       <div></div>
       <div></div>
@@ -18,19 +18,19 @@
       <div></div>
       <div></div>
     </div>
-  </div>
+  </div> #}
 {% endblock %}
 
 {% block scrollUp %}
 
-<a class="scroll scroll_up" href="#" js-scroll-up aria-label="Пролистывание в самоё начало страницы" title="Пролистнуть страницу вверх">
+{# <a class="scroll scroll_up" href="#" js-scroll-up aria-label="Пролистывание в самоё начало страницы" title="Пролистнуть страницу вверх">
   <svg class="scroll__icon"
       viewBox="0 0 86.001 86.001"
       width="25"
       height="25">
     <use xlink:href="images/inline-svg.svg#icon-arrow-down"></use>
   </svg>
-</a>
+</a> #}
 
 {% endblock %}
 
@@ -51,103 +51,362 @@
 <section class="catalog block">
   <div class="catalog__wrapper block__wrapper">
     <ul class="catalog__list">
-      <li class="catalog__item">
-        <div class="good">
-          <div class="good__wrapper">
-            <div class="good__side">
-              <h3 class="good__title">
-                Террасная доска <i>«</i>‎Эконом<i>»</i>
-              </h3>
-              <div class="good__image">
-                <picture>
-                  <source type="image/webp"
-                          srcset="images/good-1-test.webp">
-                
-                  <img class="good__img"
-                      src="images/good-1-test.jpg"
-                      alt="images/good-1-test.jpg|webp">
-                </picture>
-              </div>
-              <div class="good__palette palette">
-                <h4 class="palette__title good__subtitle">Выберите цвет изделия:</h4>
-                <ul class="palette__list">
-                  <li class="palette__item">
-                    <label class="palette__label">
-                      <input class="visually-hidden palette__input" type="checkbox" name="colors" value="color1">
-                      <span class="palette__color palette__color--red"></span>
-                    </label>
-                  </li>
-                  <li class="palette__item">
-                    <label class="palette__label">
-                      <input class="visually-hidden palette__input" type="checkbox" name="colors" value="color1">
-                      <span class="palette__color palette__color--blue"></span>
-                    </label>
-                  </li>
-                  <li class="palette__item">
-                    <label class="palette__label">
-                      <input class="visually-hidden palette__input" type="checkbox" name="colors" value="color1">
-                      <span class="palette__color palette__color--green"></span>
-                    </label>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="good__main">
-              <p class="good__description">Изделие предназначено для обустройства частных объектов. Обладает высокой стойкостью к истиранию, воздействию влаги и к ультрафиолетовомогу излучению.</p>
-              <ul class="good__properties">
-                <li class="good__property">
-                  Размеры, мм — <span>140 * 28</span>
-                </li>
-                <li class="good__property">
-                  Вес, м<sup>2</sup> — <span>19.5 кг</span>
-                </li>
-                <li class="good__property">
-                  Вес, пог. м — <span>2.8 кг</span>
-                </li>
-              </ul>
-              <div class="good__manipulation manipulation">
-                <ul class="manipulation__list">
-                  <li class="manipulation__item">
-                    <h4 class="manipulation__title">Без обработки</h4>
-                    <label class="manipulation__label">
-                      <input class="visually-hidden manipulation__input" type="radio" name="manipulation" value="withOut">
-                      <span class="manipulation__sensor"></span>
-                    </label>
-                  </li>
-                  <li class="manipulation__item">
-                    <h4 class="manipulation__title">Шлифовонная</h4>
-                    <label class="manipulation__label">
-                      <input class="visually-hidden manipulation__input" type="radio" name="manipulation" value="grinding">
-                      <span class="manipulation__sensor"></span>
-                    </label>
-                  </li>
-                  <li class="manipulation__item">
-                    <h4 class="manipulation__title">Фактура дерева</h4>
-                    <label class="manipulation__label">
-                      <input class="visually-hidden manipulation__input" type="radio" name="manipulation" value="treeFacture">
-                      <span class="manipulation__sensor"></span>
-                    </label>
-                  </li>
-                </ul>
-              </div>
-              <ul class="good__properties">
-                <li class="good__property">
-                  Цена, пог.м — <span class="good__price">267 &#8381;</span>
-                </li>
-                <li class="good__property">
-                  Цена, м<sup>2</sup> — <span class="good__price">1872 &#8381;</span>
-                </li>
-              </ul>
-              {{ button("Предзаказ", {mod: "_full _no-shadow _margin-top_auto"})}}
-            </div>
-          </div>
-        </div>
-      </li>
+      {% set goods = [
+        {
+          "good": {
+            "image": {
+              "webp": "images/good-1.webp",
+              "rastr": "images/good-1.png",
+              "alt": "Изображение Террасной доски вида «Эконом»"
+            },
+            "colors": {
+              "quartz": "Кварцевый",
+              "terracotta": "Терракотовый",
+              "chestnut": "Каштановый",
+              "wenge": "Венге",
+              "chocolate": "Шоколад",
+              "pine": "Сосновый",
+              "maple": "Кленовый",
+              "indigo": "Индиго" 
+            },
+            "title": "Террасная доска <i>«</i>‎Эконом<i>»</i>",
+            "description": "Изделие предназначено для обустройства частных объектов. Обладает высокой стойкостью к истиранию, воздействию влаги и к ультрафиолетовомогу излучению.",
+            "properties": {
+              "size": "140 * 28",
+              "weight": {
+                "metr": "19.5 кг",
+                "molded": "2.8 кг"
+              }
+            },
+            "manipulations": ["Без обработки,", " Шлифованная,", " Фактура дерева"],
+            "price": {
+              "metr": "1872 &#8381;",
+              "molded": "267 &#8381;"
+            }
+          }
+        },
+
+        {
+          "good": {
+            "image": {
+              "webp": "images/good-2.webp",
+              "rastr": "images/good-2.png",
+              "alt": "Изображение Террасной доски вида «Cтандарт»"
+            },
+            "colors": {
+              "quartz": "Кварцевый",
+              "terracotta": "Терракотовый",
+              "chestnut": "Каштановый",
+              "wenge": "Венге",
+              "chocolate": "Шоколад",
+              "pine": "Сосновый",
+              "maple": "Кленовый",
+              "indigo": "Индиго" 
+            },
+            "title": "Террасная доска <i>«</i>‎Cтандарт<i>»</i>",
+            "description": "Отличается высокой надежностью при сравнительно низкой цене. Предназначена для использования на коммерческих объектах.",
+            "properties": {
+              "size": "150 * 30",
+              "weight": {
+                "metr": "20,3 кг",
+                "molded": "3,1 кг"
+              }
+            },
+            "manipulations": ["Без обработки,", " Шлифованная,", " Фактура дерева"],
+            "price": {
+              "metr": "2172 &#8381;",
+              "molded": "332 &#8381;"
+            }
+          }
+        },
+
+        {
+          "good": {
+            "image": {
+              "webp": "images/good-3.webp",
+              "rastr": "images/good-3.png",
+              "alt": "Изображение Сайдинга ДПК"
+            },
+            "colors": {
+              "quartz": "Кварцевый",
+              "terracotta": "Терракотовый",
+              "chestnut": "Каштановый",
+              "wenge": "Венге",
+              "chocolate": "Шоколад",
+              "pine": "Сосновый",
+              "maple": "Кленовый",
+              "indigo": "Индиго" 
+            },
+            "title": "Сайдинг <i>«</i>ДПК<i>»</i>",
+            "description": "Подходит для вентилируемого фасада, и как для внешней, так и для внутренней отделки помещений.",
+            "properties": {
+              "size": "160 * 20",
+              "weight": {
+                "molded": "1.6 кг"
+              }
+            },
+            "manipulations": ["Без обработки,", " Шлифованная,", " Фактура дерева"],
+            "price": {
+              "metr": "1335 &#8381;",
+              "molded": "194 &#8381;"
+            }
+          }
+        },
+
+        {
+          "good": {
+            "image": {
+              "webp": "images/good-4.webp",
+              "rastr": "images/good-4.png",
+              "alt": "Изображение Лаги «ДПК»"
+            },
+            "colors": {
+              "quartz": "Кварцевый",
+              "terracotta": "Терракотовый",
+              "chestnut": "Каштановый",
+              "wenge": "Венге",
+              "chocolate": "Шоколад",
+              "pine": "Сосновый",
+              "maple": "Кленовый",
+              "indigo": "Индиго" 
+            },
+            "title": "Лага <i>«</i>ДПК<i>»</i>",
+            "description": "Используется как для основания террасного покрытия, так и для малых архитектурных форм.",
+            "properties": {
+              "size": "40*50",
+              "weight": {
+                "molded": "1.8 кг"
+              }
+            },
+            "manipulations": ["Без обработки,", " Фактура дерева"],
+            "price": {
+              "molded": "<span>от</span> 220 &#8381;"
+            }
+          }
+        },
+
+        {
+          "good": {
+            "image": {
+              "webp": "images/good-5.webp",
+              "rastr": "images/good-5.png",
+              "alt": "Изображение облегчённой Лаги «ДПК»"
+            },
+            "colors": {
+              "quartz": "Кварцевый",
+              "terracotta": "Терракотовый",
+              "chestnut": "Каштановый",
+              "wenge": "Венге",
+              "chocolate": "Шоколад",
+              "pine": "Сосновый",
+              "maple": "Кленовый",
+              "indigo": "Индиго" 
+            },
+            "title": "Лага <i>«</i>‎ДПК<i>»</i>, облегчённая",
+            "description": "Используется как для основания террасного покрытия, так и для малых архитектурных форм.",
+            "properties": {
+              "size": "30 * 40",
+              "weight": {
+                "molded": "1 кг"
+              }
+            },
+            "manipulations": ["Без обработки"],
+            "price": {
+              "molded": "140 &#8381;"
+            }
+          }
+        },
+
+        {
+          "good": {
+            "image": {
+              "webp": "images/good-6.webp",
+              "rastr": "images/good-6.png",
+              "alt": "Изображение полнотелой Лаги «ДПК»"
+            },
+            "colors": {
+              "quartz": "Кварцевый",
+              "terracotta": "Терракотовый",
+              "chestnut": "Каштановый",
+              "wenge": "Венге",
+              "chocolate": "Шоколад",
+              "pine": "Сосновый",
+              "maple": "Кленовый",
+              "indigo": "Индиго" 
+            },
+            "title": "Лага <i>«</i>ДПК<i>»</i>, полнотелая",
+            "description": "Отличается высокой надежностью при сравнительно низкой цене. Предназначена для использования на коммерческих объектах.",
+            "properties": {
+              "size": "40 * 50",
+              "weight": {
+                "molded": "1,8 кг"
+              }
+            },
+            "manipulations": ["Без обработки"],
+            "price": {
+              "molded": "260 &#8381;"
+            }
+          }
+        },
+
+        {
+          "good": {
+            "image": {
+              "webp": "images/good-7.webp",
+              "rastr": "images/good-7.png",
+              "alt": "Изображение Уголка «ДПК»"
+            },
+            "colors": {
+              "quartz": "Кварцевый",
+              "terracotta": "Терракотовый",
+              "chestnut": "Каштановый",
+              "wenge": "Венге",
+              "chocolate": "Шоколад",
+              "pine": "Сосновый",
+              "maple": "Кленовый",
+              "indigo": "Индиго" 
+            },
+            "title": "Уголок <i>«</i>ДПК<i>»</i>",
+            "description": "Применяется для отделки террасы по периметру, скрывая вид элементов конструкции.",
+            "properties": {
+              "size": "55 * 30",
+              "weight": {
+                "molded": "0,8 кг"
+              }
+            },
+            "manipulations": ["Без обработки,", " Шлифованная,", " Фактура дерева"],
+            "price": {
+              "molded": "165 &#8381;"
+            }
+          }
+        },
+
+        {
+          "good": {
+            "image": {
+              "webp": "images/good-8.webp",
+              "rastr": "images/good-8.png",
+              "alt": "Изображение Торцевой планки «ДПК»"
+            },
+            "colors": {
+              "quartz": "Кварцевый",
+              "terracotta": "Терракотовый",
+              "chestnut": "Каштановый",
+              "wenge": "Венге",
+              "chocolate": "Шоколад",
+              "pine": "Сосновый",
+              "maple": "Кленовый",
+              "indigo": "Индиго" 
+            },
+            "title": "Торцевая планка <i>«</i>‎ДПК<i>»</i>",
+            "description": "Применяется для обрамления торцов террасного покрытия, а также для малых архитектурных форм, ограждений и заборов.",
+            "properties": {
+              "size": "55 * 10",
+              "weight": {
+                "molded": "0,6 кг"
+              }
+            },
+            "manipulations": ["Без обработки,", " Шлифованная,", " Фактура дерева"],
+            "price": {
+              "molded": "140 &#8381;"
+            }
+          }
+        },
+
+        {
+          "good": {
+            "image": {
+              "webp": "images/good-9.webp",
+              "rastr": "images/good-9.png",
+              "alt": "Изображение Погонажа «ДПК»"
+            },
+            "colors": {
+              "quartz": "Кварцевый",
+              "terracotta": "Терракотовый",
+              "chestnut": "Каштановый",
+              "wenge": "Венге",
+              "chocolate": "Шоколад",
+              "pine": "Сосновый",
+              "maple": "Кленовый",
+              "indigo": "Индиго" 
+            },
+            "title": "Погонаж <i>«</i>ДПК<i>»</i>, планкен",
+            "description": "Используется в самых различных направлениях: ограждение забора, для изготовления скамеек и лавочек, для внутренней и наружней отделки стен и т.д.",
+            "properties": {
+              "size": "265 * 12",
+              "weight": {
+                "molded": "2,65 кг"
+              }
+            },
+            "manipulations": [" Шлифованная,", " Фактура дерева"],
+            "price": {
+              "molded": "510 &#8381;"
+            }
+          }
+        },
+
+        {
+          "good": {
+            "image": {
+              "webp": "images/good-10.webp",
+              "rastr": "images/good-10.png",
+              "alt": "Изображение погонажа «ДПК»"
+            },
+            "colors": {
+              "quartz": "Кварцевый",
+              "terracotta": "Терракотовый",
+              "chestnut": "Каштановый",
+              "wenge": "Венге",
+              "chocolate": "Шоколад",
+              "pine": "Сосновый",
+              "maple": "Кленовый",
+              "indigo": "Индиго" 
+            },
+            "title": "Погонаж <i>«</i>‎ДПК<i>»</i>, планкен",
+            "description": "Используется в самых различных направлениях: ограждение забора, для изготовления скамеек и лавочек, для внутренней и наружней отделки стен и т.д.",
+            "properties": {
+              "size": "72 * 18",
+              "weight": {
+                "molded": "1,65 кг"
+              }
+            },
+            "manipulations": ["Без обработки", " Шлифованная,", " Фактура дерева"],
+            "price": {
+              "molded": "420 &#8381;"
+            }
+          }
+        },
+
+        {
+          "good": {
+            "image": {
+              "webp": "images/good-11.webp",
+              "rastr": "images/good-11.png",
+              "alt": "Изображение Кляймера"
+            },
+            "title": "Кляймер, нержавеющий",
+            "description": "Применяется для крепления террасной доски.",
+            "properties": {
+              "size": "шов 2 - 3 мм."
+            },
+            "price": {
+              "thing": "18 &#8381;"
+            },
+            "mod": "_display-block"
+          }
+        }
+
+      ] %}
+      {% for item in goods %}
+        <li class="catalog__item">
+          {% include "components/good.twig" with {item: item} %}
+        </li>
+      {% endfor %}
     </ul>
   </div>
 </section>
 
-<div class="modal" js-modal>
+{# <div class="modal" js-modal>
   <div class="modal__wrapper is-open" js-modal-content>
     <button class="modal__toggle " type="button" aria-label="Кнопка для закрытия модального окна" js-modal-close>
       <span></span>
@@ -181,7 +440,7 @@
       </div>
     </form>
   </div>
-</div>
+</div> #}
 
 
 {% endblock %}

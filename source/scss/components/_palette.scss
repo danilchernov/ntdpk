@@ -1,22 +1,37 @@
 .palette {
-  display: flex;
-  flex-flow: row wrap;
-  padding: 0 10px;
+  width: 100%;
+  &__wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 10px;
+  }
   &__title {
     width: 100%;
     margin-top: 0;
     margin-bottom: 10px;
-    color: $main-color;
+    color: $secondary-color;
     text-transform: uppercase;
     font-size: $mobile-text-size;
   }
   &__list {
     display: flex;
     flex-flow: row wrap;
-    margin: 0;
+    margin: 0 0 -10px;
     padding-left: 0;
-    list-style: none;
+    list-style: none; 
   }
+
+  &__item {
+    @include size(20px);
+    margin-bottom: 10px;
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}
+
+/* .palette {
+
   &__item {
     @include size(20px);
     &:not(:last-child) {
@@ -97,4 +112,4 @@
   .palette {
     padding: 0 20px;
   }
-}
+} */

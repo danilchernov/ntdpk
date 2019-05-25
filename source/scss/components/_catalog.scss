@@ -11,8 +11,34 @@
   }
   &__item {
     @include flex-column(1,1,0);
+    display: flex;
     &:not(:last-child) {
       margin-bottom: 30px;
+    }
+  }
+}
+
+@include media($tablet-width) {
+  .catalog {
+    &__list {
+      justify-content: space-between;
+    }
+    &__item {
+      @include flex-column(1,2, 5px);
+    }
+  }
+}
+
+@include media($desktop-width) {
+  .catalog {
+    &__list {
+      justify-content: flex-start;
+    }
+    &__item {
+      @include flex-column(1,3, 10px);
+      &:not(:nth-child(3n)) {
+        margin-right: 20px;
+      }
     }
   }
 }

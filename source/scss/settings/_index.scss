@@ -41,8 +41,8 @@ $font-family: "Lato", $font-fallback;
 
 /* Project settings */
 
-/**
-  * *Fonts
+/*
+  *Fonts
 */
 $font-weight: $font-weight-regular;
 $font-size: 14px;
@@ -59,11 +59,27 @@ $tablet-title-text: 16px;
 
 $desktop-title-text: 20px;
 
-/**
-  * *Colors
+/*
+  * Colors
 */
 $main-color: $color;
 $secondary-color: $color-white;
 $theme-bg: #81b3d2;
 $theme-bg-focus: #669ec0;
 $theme-bg-active: #5496bd;
+
+
+/* 
+  * Palette Colors
+*/
+
+// "_quartz", "_terracotta", "_chestnut", "_wenge", "_chocolate", "_pine", "_indigo"
+
+$quartz: #6C6960; // Кварцевый
+$terracotta: #c9643b; // Терракотовый
+$chestnut: #987654; // Каштановый
+$wenge: #645452; // Венге
+$chocolate: #d2691e; // Шоколад
+$pine: #2c5545; // Сосновый
+$maple: #b98e61;
+$indigo: #4b0082; // Индиго

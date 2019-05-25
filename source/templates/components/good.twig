@@ -1,0 +1,84 @@
+<div class="good {% if item.good.mod %}good{{ item.good.mod }}{% endif %}">
+  <div class="good__wrapper">
+    <div class="good__side">
+      <h3 class="good__title">
+        {{ item.good.title }}
+      </h3>
+      <div class="good__image">
+        <picture>
+          <source type="image/webp"
+                  srcset="{{ item.good.image.webp }}">
+        
+          <img class="good__img"
+              src="{{ item.good.image.rastr }}"
+              alt="{{ item.good.image.alt}}">
+        </picture>
+      </div>
+      {% if item.good.colors %}
+        <div class="good__palette palette">
+          <div class="palette__wrapper">
+            <h4 class="palette__title">Цвета в наличии:</h4>
+            <ul class="palette__list">
+              {% for mod,title in item.good.colors %}
+                <li class="palette__item">
+                  <span class="tooltip tooltip_{{ mod }}" title="{{ title }}"></span>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% endif %}
+      
+    </div>
+    <div class="good__main">
+      <div class="good__row">
+        <p class="good__description">{{ item.good.description }}</p>
+      </div>
+      <div class="good__row">
+        <ul class="good__properties">
+          <li class="good__property">
+            Размеры, мм  — <span>{{ item.good.properties.size }}</span>
+          </li>
+          {% if item.good.properties.weight.metr %}
+            <li class="good__property">
+              Вес, м<sup>2</sup>  — <span>{{ item.good.properties.weight.metr }}</span>
+            </li>
+          {% endif %}
+          {% if item.good.properties.molded %}
+            <li class="good__property">
+              Вес, пог. м  — <span>{{ item.good.properties.weight.molded }}</span>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+      {% if item.good.manipulations %}
+        <div class="good__row">
+          <p class="good__manipulations">
+            Доступные виды обработки: {% for manipulation in item.good.manipulations %}
+              <span class="good__manipulation">{{ manipulation }}</span>
+            {% endfor %}
+          </p>
+        </div>
+      {% endif %}
+      <div class="good__row">
+        <ul class="good__properties good__properties_display-flex">
+          {% if item.good.price.metr %}
+            <li class="good__property">
+              м<sup>2</sup> — <span class="good__price">{{ item.good.price.metr }}</span>
+            </li>
+          {% endif %}
+          {% if item.good.price.molded %}
+            <li class="good__property">
+              пог.м — <span class="good__price">{{ item.good.price.molded }}</span>
+            </li>
+          {% endif %}
+          {% if item.good.price.thing %}
+            <li class="good__property">
+              шт. — <span class="good__price">{{ item.good.price.thing }}</span>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
