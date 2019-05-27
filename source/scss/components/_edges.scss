@@ -1,6 +1,5 @@
 .edges {
   &__wrapper {
-    max-width: 100%;
     padding: 30px 20px;
   }
   &__list {
@@ -30,6 +29,7 @@
   }
   &__icon {
     fill: $color-white;
+    transition: all 0.3s;
   }
   &__main {
     flex: 1 1 auto;
@@ -46,11 +46,8 @@
 
 @include media($tablet-width) {
   .edges {
-    &__wrapper {
-      // background: url("../images/presentation-bg-tablet@1x.jpg") 50% 50% no-repeat / cover;
-      // background-attachment: fixed;
-      background-color: rgba(indigo, 0.3);
-    }
+    background-color: $color-white;
+
     &__list {
       display: flex;
       flex-flow: row wrap;
@@ -98,15 +95,22 @@
 
 @include media($desktop-width) {
   .edges {
+    &__wrapper {
+      max-width: $max-width;
+    }
     &__list {
-      width: 600px;
-      margin-bottom: -25px;
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 0;
     }
     &__item {
-      max-width: 275px;
-      margin-bottom: 25px;
+      @include flex-column(1,4,10px);
+      margin-bottom: 0;
       &:not(:nth-child(even)) {
-        margin-right: 25px;
+        margin-right: 0;
+      }
+      &:not(:last-child) {
+        margin-right: 20px;
       }
     }
   }
@@ -117,6 +121,13 @@
     }
     &__title {
       font-size: $tablet-title-text;
+    }
+    &:hover {
+      .edge {
+        &__icon {
+          transform: translateY(-10px);
+        }
+      }
     }
   }
 }

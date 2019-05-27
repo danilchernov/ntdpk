@@ -1,7 +1,6 @@
 .intro {
   position: relative;
   background: url("../images/intro-bg@mobile.jpg") no-repeat 70% 35%;
-  overflow: hidden;
   &__wrapper {
     display: flex;
     flex-flow: row wrap;
@@ -36,6 +35,7 @@
   &--inner {
     background: url("../images/intro-bg-catalog@mobile.jpg") no-repeat 50% 50%;
     height: 350px;
+    background-size: cover;
     .intro__wrapper {
       height: inherit;
     }
@@ -80,6 +80,7 @@
     }
     &--inner {
       background: url("../images/intro-bg-catalog@tablet.jpg") no-repeat 50% 25%;
+      background-size: cover;
       .intro__title {
         color: $main-color;
         margin-bottom: 115px;
@@ -92,6 +93,7 @@
   .intro {
     background-size: cover;
     &__wrapper {
+      max-width: $max-width;
       font-size: $tablet-text-size;
     }
     &__side {
