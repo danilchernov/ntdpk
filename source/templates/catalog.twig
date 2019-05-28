@@ -1,7 +1,7 @@
 {% extends "components/base.twig" %}
 {% from "mock/ui.twig" import picture, svg,button, input, toggle, radio, checkbox %}
 
-{% block title %}Главная страница{% endblock %}
+{% block title %}Каталог{% endblock %}
 {% block body %}
 
 <section class="intro intro--inner block" js-intro>
@@ -20,6 +20,7 @@
 
 <section class="catalog block">
   <div class="catalog__wrapper block__wrapper">
+    <h2 class="visuallu-hidden">Каталог</h2>
     <ul class="catalog__list">
       {% set goods = [
         {
@@ -150,7 +151,7 @@
             },
             "manipulations": ["Без обработки,", " Фактура дерева"],
             "price": {
-              "molded": "<span>от</span> 220 &#8381;"
+              "molded": "220 &#8381;"
             }
           }
         },

@@ -64,12 +64,12 @@
         <ul class="good__properties good__properties_display-flex">
           {% if item.good.price.metr %}
             <li class="good__property">
-              м<sup>2</sup> — <span class="good__price">{{ item.good.price.metr }}</span>
+              м <sup>2</sup> — от <span class="good__price">{{ item.good.price.metr }}</span>
             </li>
           {% endif %}
           {% if item.good.price.molded %}
             <li class="good__property">
-              пог.м — <span class="good__price">{{ item.good.price.molded }}</span>
+              пог.м — от <span class="good__price">{{ item.good.price.molded }}</span>
             </li>
           {% endif %}
           {% if item.good.price.thing %}

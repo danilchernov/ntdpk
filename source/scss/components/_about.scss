@@ -1,0 +1,55 @@
+.about {
+  &__wrapper {
+    padding: 30px 20px;
+  }
+  &__side {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    margin-bottom: 30px;
+    
+    i {
+      font-style: normal;
+      color: $theme-bg;
+    }
+
+    p {
+      width: 100%;
+    }
+  }
+  &__title {
+    width: 100%;
+    margin: 0 0 10px;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  &__row {
+    &:not(:last-child) {
+      margin-bottom: 20px
+    };
+  }
+  &__list {
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+  }
+}
+
+@include media($tablet-width) {
+  .about {
+    &__side {
+      font-size: $tablet-text-size;
+    }
+    &__title {
+      font-size: $tablet-title-text;
+    }
+  }
+}
+
+@include media($desktop-width) {
+  .about {
+    &__title {
+      font-size: $desktop-title-text;
+    }
+  }
+}

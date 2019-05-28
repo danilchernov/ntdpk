@@ -46,6 +46,10 @@
       margin-bottom: 60px;
     }
   }
+  &--bg-none {
+    background-image: none;
+    background-color: $theme-bg;
+  }
 }
 
 @include media(550px) {
@@ -85,6 +89,10 @@
         color: $main-color;
         margin-bottom: 115px;
       }
+    }
+    &--bg-none {
+      background-image: none;
+      background-color: $theme-bg;
     }
   }
 }

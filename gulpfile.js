@@ -3,6 +3,7 @@
 const gulp = require('gulp');
 const tasks = require('./configurations/tasks');
 
+gulp.task('favicon', tasks.favicon);
 gulp.task('html', tasks.html);
 gulp.task('styles', tasks.styles);
 gulp.task('styles:vendor', tasks['styles-vendor']);
@@ -18,7 +19,7 @@ gulp.task('watchers', tasks.watchers);
 gulp.task('zip', tasks.zip);
 
 gulp.task('build',
-  gulp.series('del',
+  gulp.series('del', 'favicon',
     gulp.parallel('images', 'webp','svg', 'fonts', 'styles:vendor', 'js:vendor','html', 'styles', 'js')
   )
 );

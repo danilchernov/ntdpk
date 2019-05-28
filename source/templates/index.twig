@@ -1,7 +1,7 @@
 {% extends "components/base.twig" %}
 {% from "mock/ui.twig" import picture, svg,button, input, toggle, radio, checkbox %}
 
-{% block title %}Главная страница{% endblock %}
+{% block title %}Главная{% endblock %}
 {% block body %}
 
 <section class="intro block" js-intro>
@@ -136,21 +136,7 @@
       ] %}
       {% for item in hits %}
         <li class="hits__item">
-          <a class="hit" href="{{ item.href }}" title="{{ item.title }}" aria-label="{{ item.aria }}">
-            <div class="hit__wrapper">
-              <div class="hit__main">
-                <picture>
-                  <source type="image/webp"
-                          srcset="{{ item.picture.webp }}">
-                
-                  <img class="hit__img"
-                      src="{{ item.picture.raster }}"
-                      alt="{{ item.picture.alt }}">
-                </picture>
-              </div>
-              <span class="hit__label">{{ item.name }}</span>
-            </div>
-          </a>
+          {% include "components/hit.twig" with {item: item} %}
         </li>
       {% endfor %}
     </ul>

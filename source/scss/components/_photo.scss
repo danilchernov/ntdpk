@@ -1,0 +1,71 @@
+.photo {
+  &__wrapper {
+    position: relative;
+  }
+  &__image {
+    position: relative;
+    border: 5px solid $theme-bg;
+  }
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  &__layer {
+    position: absolute;
+    @include trbl(0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($main-color,0.5);
+
+    opacity: 0;
+    transition: all 0.3s 0.3s;
+  }
+  &__icon {
+    display: block;
+    @include size(50px);
+    fill: $theme-bg;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s 0.35s;
+  }
+  &:focus {
+    &__icon {
+      fill: $theme-bg-focus;
+    }
+  }
+  &:active {
+    &__icon {
+      fill: $theme-bg-active
+    }
+  }
+}
+
+@include media($tablet-width) {
+  .photo {
+    &:focus {
+      .photo__layer {
+        opacity: 1;
+      }
+      .photo__icon {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+@include media($desktop-width) {
+  .photo {
+    &:hover {
+      .photo__layer {
+        opacity: 1;
+      }
+      .photo__icon {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}

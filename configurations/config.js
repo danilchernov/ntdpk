@@ -1,8 +1,13 @@
 module.exports = {
   paths: {
+    name: 'ntdpk',
     project: './',
     build: './build',
     zip: './build/**/*.*',
+    favicon: {
+      source: 'source/favicon/**/*.*',
+      build: 'build/favicon'
+    },
     html: {
       source: 'source/templates/*.twig',
       build: './build'

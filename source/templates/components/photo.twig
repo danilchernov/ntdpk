@@ -1,0 +1,26 @@
+{% set photo = item %}
+
+<a class="photo" href="{{ photo.main.src }}" data-fancybox="{{ photo.type }}" aria-label={{ photo.main.aria }} title="{{ photo.main.title }}">
+  <div class="photo__wrapper">
+    <div class="photo__main">
+      <div class="photo__image">
+        {# Image #}
+        <img class="photo__img" src="{{ photo.main.src }}" alt="{{ photo.main.alt }}">
+
+        {# CSS Layer trick #}
+        <div class="photo__layer">
+          <svg class="photo__icon"
+            viewBox="0 0 50 50"
+            width="50"
+            height="50">
+          <use xlink:href="images/inline-svg.svg#icon-zoom"></use>
+        </div>
+      </div>
+    </div>
+    {# {% if photo.side %}
+      <div class="photo__side">
+
+      </div>
+    {% endif %} #}
+  </div>
+</a>

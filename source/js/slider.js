@@ -29,7 +29,7 @@
           dotClass: 'slider__dot',
           items: 1,
           dots: true,
-          loop: true
+          // loop: true
         });
       }
 
