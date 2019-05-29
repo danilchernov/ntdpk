@@ -1,7 +1,6 @@
 .button {
   position: relative;
-  display: inline-block;
-  vertical-align: top;
+  display: block;
   padding: 0;
   border: none;
   background-color: rgba(0,0,0,0);
@@ -13,6 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
     max-width: 100%;
     padding: 12px 25px;
     font-family: $font-family;

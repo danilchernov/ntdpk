@@ -3,12 +3,12 @@
     theme: 'tooltipster-punk',
     trigger:"custom",
     triggerOpen: {
-      click: true,  // For mouse
-      tap: true    // For touch device
+      click: true,
+      tap: true
     },
     triggerClose: {
-      click: true,  // For mouse
-      tap: true    // For touch device
+      click: true,
+      tap: true
     },
     zIndex: 3,
   });

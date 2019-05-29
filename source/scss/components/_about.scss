@@ -27,11 +27,37 @@
     &:not(:last-child) {
       margin-bottom: 20px
     };
-  }
-  &__list {
-    padding-left: 0;
-    margin: 0;
-    list-style: none;
+
+    /* typography */
+
+    i {
+      font-style: normal;
+      color: $theme-bg;
+    }
+
+    i + span {
+      color: $main-color;
+    }
+
+    span {
+      text-transform: uppercase;
+      font-weight: bold;
+      color: $theme-bg;
+    }
+    blockquote {
+      margin: 0;
+      padding: 20px;
+      width: 100%;
+      font-size: 120%;
+      font-style: italic; 
+      color: $secondary-color;
+      text-align: center;
+      background-color: $theme-bg;
+
+      i {
+        color: $secondary-color;
+      }
+    }
   }
 }
 
@@ -42,6 +68,19 @@
     }
     &__title {
       font-size: $tablet-title-text;
+    }
+    &__main {
+      font-size: $tablet-text-size;
+    }
+    &__row {
+      p {
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+      }
+      blockquote {
+        padding: 40px;
+      }
     }
   }
 }

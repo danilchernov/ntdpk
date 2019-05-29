@@ -44,7 +44,7 @@
       margin-bottom: -20px;
     }
     &__item {
-      @include flex-column(1,2, 10px);
+      @include flex-column(1,2, 5px);
       &:not(:nth-child(2n)) {
         margin-right: 20px;
       }
