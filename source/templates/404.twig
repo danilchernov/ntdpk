@@ -1,0 +1,21 @@
+{% extends "components/base.twig" %}
+{% from "mock/ui.twig" import picture, svg,button, input, toggle, radio, checkbox %}
+
+{% block title %}Страница не найдена{% endblock %}
+{% block body %}
+
+<section class="page-404">
+  <div class="page-404__wrapper">
+    <div class="page-404__image">
+      <img class="page-404__img" src="images/404.gif" alt="Траволта ищет потерянную страницу :)">
+    </div>
+    <h2 class="page-404__title">К сожалению, эта страница недоступна 😢</h2>
+    {{ button("Вернуться на главную", { 
+      href:"index.html",
+      aria: "Вернуться на главную, чтобы начать свой путь заново"
+    }) }}
+  </div>
+</section>
+
+
+{% endblock %}

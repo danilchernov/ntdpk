@@ -1,0 +1,14 @@
+.page-404 {
+  &__wrapper {
+    padding: 100px 20px 30px;
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    align-items: center;
+  }
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}

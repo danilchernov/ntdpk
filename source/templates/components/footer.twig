@@ -39,6 +39,7 @@
       <ul class="socials__list">
         {% set socials = [
           {
+            "href": "https://vk.com/ntdpk",
             "aria": "Ссылка на страницу группы в ВК",
             "title": "Перейти на страницу компании в ВК",
             "icon": {
@@ -49,6 +50,7 @@
             }
           },
           {
+            "href": "https://www.instagram.com/ntdpk_biysk",
             "aria": "Ссылка на страницу компании в Инстаграм",
             "title": "Перейти на страницу бизнес-аккаунта в Инстаграм",
             "icon": {
@@ -61,7 +63,7 @@
         ] %}
         {% for item in socials %}
           <li class="socials__item">
-            <a href="#" class="socials__link" aria-label="{{ item.aria}}" title="{{ item.title }}">
+            <a href="{{ item.href }}" class="socials__link" target="_blank" aria-label="{{ item.aria}}" title="{{ item.title }}">
               <svg class="socials__icon"
                   viewBox="{{ item.icon.viewBox }}"
                   width="{{ item.icon.width }}"
