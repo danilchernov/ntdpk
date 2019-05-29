@@ -1,5 +1,6 @@
 ;(function($){
   'use strict';
+  
   const $modal = $('[js-modal]');
   if ($modal.length != 0) {
     const $calls = $('[js-call]');
@@ -7,7 +8,7 @@
     const $content = $modal.find('[js-modal-content]');
 
     /**
-     * * Open .modal 
+     * * Open .modal
     */
 
     $calls.each(function() {
