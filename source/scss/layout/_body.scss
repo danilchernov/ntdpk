@@ -58,32 +58,10 @@ body {
     right: 0;
     z-index: 10;
   }
-  &__content {
+  /* &__content {
     flex-grow: 1;
-  }
+  } */
   &__footer {
     margin-top: auto;
   }
 }
-
-/* @include media($tablet-width) {
-  .body {
-    &__wrapper {
-      max-width: $tablet-width;
-    }
-    &__header {
-      max-width: $tablet-width;
-    }
-  }
-}
-
-@include media($desktop-width) {
-  .body {
-    &__wrapper {
-      max-width: $max-width;
-    }
-    &__header {
-      max-width: $max-width;
-    }
-  }
-} */

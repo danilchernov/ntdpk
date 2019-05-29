@@ -26,8 +26,7 @@
         {
           "good": {
             "image": {
-              "webp": "images/good-1.webp",
-              "rastr": "images/good-1.png",
+              "src": "images/good-1.png",
               "alt": "Изображение Террасной доски вида «Эконом»"
             },
             "colors": {
@@ -60,8 +59,7 @@
         {
           "good": {
             "image": {
-              "webp": "images/good-2.webp",
-              "rastr": "images/good-2.png",
+              "src": "images/good-2.png",
               "alt": "Изображение Террасной доски вида «Cтандарт»"
             },
             "colors": {
@@ -94,8 +92,7 @@
         {
           "good": {
             "image": {
-              "webp": "images/good-3.webp",
-              "rastr": "images/good-3.png",
+              "src": "images/good-3.png",
               "alt": "Изображение Сайдинга ДПК"
             },
             "colors": {
@@ -127,8 +124,7 @@
         {
           "good": {
             "image": {
-              "webp": "images/good-4.webp",
-              "rastr": "images/good-4.png",
+              "src": "images/good-4.png",
               "alt": "Изображение Лаги «ДПК»"
             },
             "colors": {
@@ -159,8 +155,7 @@
         {
           "good": {
             "image": {
-              "webp": "images/good-5.webp",
-              "rastr": "images/good-5.png",
+              "src": "images/good-5.png",
               "alt": "Изображение облегчённой Лаги «ДПК»"
             },
             "colors": {
@@ -191,8 +186,7 @@
         {
           "good": {
             "image": {
-              "webp": "images/good-6.webp",
-              "rastr": "images/good-6.png",
+              "src": "images/good-6.png",
               "alt": "Изображение полнотелой Лаги «ДПК»"
             },
             "colors": {
@@ -223,8 +217,7 @@
         {
           "good": {
             "image": {
-              "webp": "images/good-7.webp",
-              "rastr": "images/good-7.png",
+              "src": "images/good-7.png",
               "alt": "Изображение Уголка «ДПК»"
             },
             "colors": {
@@ -255,8 +248,7 @@
         {
           "good": {
             "image": {
-              "webp": "images/good-8.webp",
-              "rastr": "images/good-8.png",
+              "src": "images/good-8.png",
               "alt": "Изображение Торцевой планки «ДПК»"
             },
             "colors": {
@@ -287,8 +279,7 @@
         {
           "good": {
             "image": {
-              "webp": "images/good-9.webp",
-              "rastr": "images/good-9.png",
+              "src": "images/good-9.png",
               "alt": "Изображение Погонажа «ДПК»"
             },
             "colors": {
@@ -319,8 +310,7 @@
         {
           "good": {
             "image": {
-              "webp": "images/good-10.webp",
-              "rastr": "images/good-10.png",
+              "src": "images/good-10.png",
               "alt": "Изображение погонажа «ДПК»"
             },
             "colors": {
@@ -351,8 +341,7 @@
         {
           "good": {
             "image": {
-              "webp": "images/good-11.webp",
-              "rastr": "images/good-11.png",
+              "src": "images/good-11.png",
               "alt": "Изображение Кляймера"
             },
             "title": "Кляймер, нержавеющий",
@@ -369,7 +358,7 @@
 
       ] %}
       {% for item in goods %}
-        <li class="catalog__item">
+        <li class="catalog__item" data-aos="fade-up">
           {% include "components/good.twig" with {item: item} %}
         </li>
       {% endfor %}
