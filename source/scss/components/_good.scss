@@ -39,6 +39,14 @@
     display: block;
     width: 100%;
     height: auto;
+    &.lazyload,
+    &.lazyloading {
+      opacity: 0;
+    }
+    &.lazyloaded {
+      opacity: 1;
+      transition: opacity 300ms;
+    }
   }
   &__palette {
     width: 100%;

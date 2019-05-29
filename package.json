@@ -10,14 +10,14 @@
     "zip": "set NODE_ENV=build && gulp build && gulp zip"
   },
   "dependencies": {
-    "aos": "^2.3.4",
-    "jquery": "^3.4.1",
-    "lazysizes": "^5.0.0",
-    "@fancyapps/fancybox": "^3.5.7",
     "normalize.css": "^8.0.1",
-    "owl.carousel": "^2.3.4",
+    "aos": "^2.3.4",
+    "lazysizes": "^5.0.0",
     "picturefill": "^3.0.3",
     "svgxuse": "^1.2.6",
+    "jquery": "^3.4.1",
+    "@fancyapps/fancybox": "^3.5.7",
+    "owl.carousel": "^2.3.4",
     "tooltipster": "^4.2.6"
   },
   "devDependencies": {

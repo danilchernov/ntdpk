@@ -1,14 +1,9 @@
 <a class="hit" href="{{ item.href }}" title="{{ item.title }}" aria-label="{{ item.aria }}">
   <div class="hit__wrapper">
     <div class="hit__main">
-      <picture>
-        <source type="image/webp"
-                srcset="{{ item.picture.webp }}">
-      
-        <img class="hit__img"
-            src="{{ item.picture.raster }}"
-            alt="{{ item.picture.alt }}">
-      </picture>
+      <img class="hit__img lazyload"
+          data-src="{{ item.picture.raster }}"
+          alt="{{ item.picture.alt }}">
     </div>
     <span class="hit__label">{{ item.name }}</span>
   </div>

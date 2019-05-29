@@ -54,7 +54,16 @@
     display: block;
     width: 100%;
     height: auto;
+    &.lazyload,
+    &.lazyloading {
+      opacity: 0;
+    }
+    &.lazyloaded {
+      opacity: 1;
+      transition: opacity 300ms;
+    }
   }
+
   &__label {
     position: absolute;
     top: 50%;

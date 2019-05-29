@@ -5,14 +5,9 @@
         {{ item.good.title }}
       </h3>
       <div class="good__image">
-        <picture>
-          <source type="image/webp"
-                  srcset="{{ item.good.image.webp }}">
-        
-          <img class="good__img"
-              src="{{ item.good.image.rastr }}"
+          <img class="good__img lazyload"
+              data-src="{{ item.good.image.rastr }}"
               alt="{{ item.good.image.alt}}">
-        </picture>
       </div>
       {% if item.good.colors %}
         <div class="good__palette palette">

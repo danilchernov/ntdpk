@@ -5,7 +5,7 @@
     <div class="photo__main">
       <div class="photo__image">
         {# Image #}
-        <img class="photo__img" src="{{ photo.main.src }}" alt="{{ photo.main.alt }}">
+        <img class="photo__img lazyload" data-src="{{ photo.main.src }}" alt="{{ photo.main.alt }}">
 
         {# CSS Layer trick #}
         <div class="photo__layer">
