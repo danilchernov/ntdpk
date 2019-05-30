@@ -92,7 +92,7 @@
     }
     span.good__price {
       color: $theme-bg;
-      font-size: 20px;
+      font-size: 19px;
       span {
         font-size: $mobile-text-size;
         color: $main-color;
@@ -136,13 +136,13 @@
       &:not(:last-child) {
         margin-bottom: 10px;
       }
+      span.good__price {
+        font-size: 25px;
+      }
     }
     &__property {
       &:not(:last-child) {
         margin-bottom: 10px;
-        span.good__price {
-          font-size: 25px;
-        }
       }
     }
   }

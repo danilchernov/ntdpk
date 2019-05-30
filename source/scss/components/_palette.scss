@@ -30,10 +30,19 @@
   }
 }
 
+@include media($tablet-width) {
+  .palette {
+    &__wrapper {
+      padding: 10px 20px;
+    }
+  }
+}
+
+
 @include media($desktop-width) {
   .palette {
     &__wrapper {
-      padding: 20px 10px;
+      padding: 20px;
     }
     &__title {
       font-size: $tablet-title-text;
