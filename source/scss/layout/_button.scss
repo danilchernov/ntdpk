@@ -1,18 +1,20 @@
 .button {
+  appearance: none;
   position: relative;
-  display: block;
+  display: inline-block;
   padding: 0;
   border: none;
+  border-radius: 0;
   background-color: rgba(0,0,0,0);
   text-decoration: none;
   user-select: none;
   cursor: pointer;
+
   &__content {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     max-width: 100%;
     padding: 12px 25px;
     font-family: $font-family;
@@ -43,7 +45,7 @@
     }
   }
   &__title {
-    flex: 0 0 auto;
+    flex: none;
     min-width: 0;
     text-decoration: none;
     z-index: 1;

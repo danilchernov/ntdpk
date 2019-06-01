@@ -1,0 +1,46 @@
+.form {
+  &__wrapper {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  &__row {
+    flex: 0 1 100%;
+  }
+  &__label {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    span {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      // transform: translateY(-50%);
+      z-index: 1;
+    }
+  }
+  &__input {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    border: 3px solid $theme-bg;
+    resize: none;
+    
+    font-size: 16px;
+    color: $main-color;
+    &--textarea {
+      border: 3px solid $theme-bg;
+    }
+    @include placeholder {
+      font-size: inherit;
+      color: rgba($main-color, 0.7);
+      opacity: 1;
+      transition: all 0.3s;
+    }
+    &:focus {
+      @include placeholder {
+        opacity: 0;
+      }
+    }
+  }
+}

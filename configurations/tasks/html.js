@@ -16,8 +16,10 @@ module.exports = () => {
     }))
     .pipe($.twig())
     .pipe($.htmlBeautify({indentSize: 2}))
+/* ! without min   
     .pipe($.if(!isDevelopment, $.htmlmin({
       collapseWhitespace: true
-    })))
+    }))) 
+*/
     .pipe(gulp.dest(config.paths.html.build));
 };

@@ -82,34 +82,42 @@
         {# Modal #}
         {% block modal %}
           <div class="modal" js-modal>
-            <div class="modal__wrapper is-open" js-modal-content>
+            <div class="modal__wrapper" js-modal-container>
               <button class="modal__toggle " type="button" aria-label="Кнопка для закрытия модального окна" js-modal-close>
                 <span></span>
               </button>
-              <form class="modal__call-form call-form" action="#" method="POST">
-                <div class="call-form__wrapper">
-                  <h2 class="call-form__title">Форма обратной связи</h2>
-                  <ul class="call-form__fieldsets">
-                    <li class="call-form__fieldset">
-                      <label class="call-form__label">
-                        <input type="text" class="call-form__input" name="name" placeholder="Имя и фамилия">
-                      </label>
+              <form class="modal__form form" action="#" method="POST">
+                <div class="form__wrapper">
+                  <h2 class="form__title">Форма обратной связи</h2>
+                  <ul class="form__container">
+                    <li class="form__row">
+                      <div class="form__column">
+                        <label class="form__label">
+                          <input type="text" class="form__input" name="name" placeholder="Имя и фамилия">
+                        </label>
+                      </div>
                     </li>
-                    <li class="call-form__fieldset">
-                      <label class="call-form__label call-form__label--tablet">
-                        <input type="email" class="call-form__input" name="email" placeholder="Электронная почта">
-                      </label>
-                      <label class="call-form__label call-form__label--tablet">
-                        <input type="text" class="call-form__input" name="name" placeholder="Номер телефона">
-                      </label>
+                    <li class="form__row">
+                      <div class="form__column form__column--tablet">
+                        <label class="form__label">
+                          <input type="email" class="form__input" name="email" placeholder="Электронная почта">
+                        </label>
+                      </div>
+                      <div class="form__column form__column--tablet">
+                        <label class="form__label">
+                          <input type="text" class="form__input" name="name" placeholder="Номер телефона">
+                        </label>
+                      </div>
                     </li>
-                    <li class="call-form__fieldset">
-                      <label class="call-form__label">
-                        <textarea class="call-form__input call-form__input--textarea" name="comment" cols="30" rows="6" placeholder="Комментарий для менеджера"></textarea>
-                      </label>
+                    <li class="form__row">
+                      <div class="form__column">
+                        <label class="form__label">
+                          <textarea class="form__input form__input--textarea" name="comment" cols="30" rows="6" placeholder="Комментарий для менеджера"></textarea>
+                        </label>
+                      </div>
                     </li>
                   </ul>
-                  <div class="call-form__side">
+                  <div class="form__side">
                     {{ button('Отправить заявку', {type: "submit",mod: "_full", js: "js-form-submit", aria: "Кнопка для отправки формы обратной связи"}) }}
                   </div>
                 </div>
