@@ -14,4 +14,5 @@ module.exports = () => {
   gulp.watch(config.paths.watchers.images.pictures, gulp.series('images'));
   gulp.watch(config.paths.watchers.images.icons, gulp.series('svg'));
   gulp.watch(config.paths.watchers.fonts, gulp.series('fonts'));
+  gulp.watch(config.paths.watchers.docs, gulp.series('docs'));
 };

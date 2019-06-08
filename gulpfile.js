@@ -13,6 +13,7 @@ gulp.task('images', tasks.images);
 // gulp.task('webp', tasks.webp);
 gulp.task('svg', tasks.svg);
 gulp.task('fonts', tasks.fonts);
+gulp.task('docs', tasks.docs);
 gulp.task('del', tasks.del);
 gulp.task('server', tasks.server);
 gulp.task('watchers', tasks.watchers);
@@ -20,7 +21,7 @@ gulp.task('zip', tasks.zip);
 
 gulp.task('build',
   gulp.series('del', 'favicon',
-    gulp.parallel('images','svg', 'fonts', 'styles:vendor', 'js:vendor','html', 'styles', 'js')
+    gulp.parallel('images','svg', 'fonts', 'docs','styles:vendor', 'js:vendor','html', 'styles', 'js')
   )
 );
 

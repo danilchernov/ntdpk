@@ -40,6 +40,10 @@ module.exports = {
       source: 'source/fonts/*.*',
       build: './build/fonts'
     },
+    docs: {
+      source: 'source/docs/**/*.*',
+      build: './build/docs'
+    },
     watchers: {
       html: 'source/templates/**/*.twig',
       css: {
@@ -54,7 +58,8 @@ module.exports = {
         pictures: 'source/images/**/*.*',
         icons: 'source/svg/*.svg'
       },
-      fonts:'source/fonts/*.*'
+      fonts:'source/fonts/*.*',
+      docs: 'source/docs/**/*.*'
     }
   }
 };

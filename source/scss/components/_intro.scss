@@ -60,9 +60,21 @@
       margin-bottom: 60px;
     }
   }
-  &--bg-none {
-    background-image: none;
-    background-color: $theme-bg;
+
+  &--installation {
+    background: url("../images/intro-bg-installation@mobile.jpg") no-repeat 50% 50%;
+    height: 350px;
+    background-size: cover;
+    
+    .intro__wrapper {
+      height: 100%;
+      align-items: flex-end
+    }
+    .intro__title {
+      color: $secondary-color;
+      text-align: left;
+      margin-bottom: 30px;
+    }
   }
 }
 
@@ -110,6 +122,12 @@
 
       .intro__title {
         padding-top: 30px;
+      }
+    }
+    &--installation {
+      background: url("../images/intro-bg-installation@tablet.jpg") no-repeat 25% 50%;
+      .intro__wrapper {
+        align-items: center;
       }
     }
   }
