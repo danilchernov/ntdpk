@@ -3,7 +3,7 @@
   &__wrapper {
     display: flex;
     flex-flow: row wrap;
-    padding: 10px;
+    padding: 8px 10px 10px 10px;
   }
   &__title {
     width: 100%;
@@ -33,7 +33,7 @@
 @include media($tablet-width) {
   .palette {
     &__wrapper {
-      padding: 10px 20px;
+      padding: 8px 20px 10px;
     }
   }
 }
@@ -42,7 +42,7 @@
 @include media($desktop-width) {
   .palette {
     &__wrapper {
-      padding: 20px;
+      padding: 18px 20px 20px;
     }
     &__title {
       font-size: $tablet-title-text;
