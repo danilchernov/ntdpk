@@ -31,23 +31,25 @@
       <div class="good__row">
         <p class="good__description">{{ item.good.description }}</p>
       </div>
-      <div class="good__row">
-        <ul class="good__properties">
-          <li class="good__property">
-            Размеры, мм  — <span>{{ item.good.properties.size }}</span>
-          </li>
-          {% if item.good.properties.weight.metr %}
+      {% if item.good.properties %}
+        <div class="good__row">
+          <ul class="good__properties">
             <li class="good__property">
-              Вес, м<sup>2</sup>  — <span>{{ item.good.properties.weight.metr }}</span>
+              Размеры, мм  — <span>{{ item.good.properties.size }}</span>
             </li>
-          {% endif %}
-          {% if item.good.properties.weight.molded %}
-            <li class="good__property">
-              Вес, пог. м  — <span>{{ item.good.properties.weight.molded }}</span>
-            </li>
-          {% endif %}
-        </ul>
-      </div>
+            {% if item.good.properties.weight.metr %}
+              <li class="good__property">
+                Вес, м<sup>2</sup>  — <span>{{ item.good.properties.weight.metr }}</span>
+              </li>
+            {% endif %}
+            {% if item.good.properties.weight.molded %}
+              <li class="good__property">
+                Вес, пог. м  — <span>{{ item.good.properties.weight.molded }}</span>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+      {% endif %}
       {% if item.good.manipulations %}
         <div class="good__row">
           <p class="good__manipulations">
@@ -57,25 +59,27 @@
           </p>
         </div>
       {% endif %}
+      {% if item.good.price %}
       <div class="good__row">
         <ul class="good__properties good__properties_display-flex">
-          {% if item.good.price.metr %}
-            <li class="good__property">
-              м <sup>2</sup> — от <span class="good__price">{{ item.good.price.metr }}</span>
-            </li>
-          {% endif %}
-          {% if item.good.price.molded %}
-            <li class="good__property">
-              пог.м — от <span class="good__price">{{ item.good.price.molded }}</span>
-            </li>
-          {% endif %}
-          {% if item.good.price.thing %}
-            <li class="good__property">
-              шт. — <span class="good__price">{{ item.good.price.thing }}</span>
-            </li>
-          {% endif %}
-        </ul>
+            {% if item.good.price.metr %}
+              <li class="good__property">
+                м <sup>2</sup> — от <span class="good__price">{{ item.good.price.metr }}</span>
+              </li>
+            {% endif %}
+            {% if item.good.price.molded %}
+              <li class="good__property">
+                пог.м — от <span class="good__price">{{ item.good.price.molded }}</span>
+              </li>
+            {% endif %}
+            {% if item.good.price.thing %}
+              <li class="good__property">
+                шт. — <span class="good__price">{{ item.good.price.thing }}</span>
+              </li>
+            {% endif %}
+          </ul>
       </div>
+      {% endif %}
     </div>
   </div>
 </div>
