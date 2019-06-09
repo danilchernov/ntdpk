@@ -32,37 +32,44 @@
   &__row {
     &:not(:last-child) {
       margin-bottom: 20px
-    };
+    }
+  }
+  i {
+    font-style: normal;
+    color: $theme-bg;
+  }
 
-    /* typography */
+  i + span {
+    color: $main-color;
+  }
+
+  span {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $theme-bg;
+  }
+  blockquote {
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    font-size: 120%;
+    font-style: italic; 
+    color: $secondary-color;
+    text-align: center;
+    background-color: $theme-bg;
 
     i {
-      font-style: normal;
-      color: $theme-bg;
-    }
-
-    i + span {
-      color: $main-color;
-    }
-
-    span {
-      text-transform: uppercase;
-      font-weight: bold;
-      color: $theme-bg;
-    }
-    blockquote {
-      margin: 0;
-      padding: 20px;
-      width: 100%;
-      font-size: 120%;
-      font-style: italic; 
       color: $secondary-color;
-      text-align: center;
-      background-color: $theme-bg;
-
-      i {
-        color: $secondary-color;
-      }
+    }
+  }
+  ul {
+    margin-top: 0;
+    padding-left: 20px;
+  }
+  
+  li {
+    &:not(:last-child) {
+      margin-bottom: 10px;
     }
   }
 }

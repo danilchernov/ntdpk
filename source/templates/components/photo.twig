@@ -1,11 +1,11 @@
 {% set photo = item %}
 
-<a class="photo" href="{{ photo.main.src }}" data-fancybox="{{ photo.type }}" aria-label={{ photo.main.aria }} title="{{ photo.main.title }}">
+<a class="photo" href="{{ photo.main.src }}" data-fancybox="{{ photo.type }}" aria-label="Нажмите, чтобы открыть галерею с изображениями" title="Открыть галерею с изображениями">
   <div class="photo__wrapper">
     <div class="photo__main">
       <div class="photo__image">
         {# Image #}
-        <img class="photo__img lazyload" data-src="{{ photo.main.src }}" alt="{{ photo.main.alt }}">
+        <img class="photo__img lazyload" data-src="{{ photo.main.src }}" alt="Изображение конструкций, которые выполнены с помощью нашего материала">
 
         {# CSS Layer trick #}
         <div class="photo__layer">

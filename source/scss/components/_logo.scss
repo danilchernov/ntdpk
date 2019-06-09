@@ -45,6 +45,11 @@
       color: $secondary-color;
     }
   }
+ /*  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  } */
 }
 
 @include media($tablet-width) {
