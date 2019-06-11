@@ -62,7 +62,6 @@
 
   &--installation {
     background: url("../images/intro-bg-installation@mobile.jpg") no-repeat 50% 50%;
-    height: 350px;
     background-size: cover;
     
     .intro__wrapper {
@@ -72,6 +71,14 @@
       color: $secondary-color;
       text-align: left;
       margin-bottom: 30px;
+    }
+  }
+
+  &--use {
+    background: url("../images/intro-bg-use@mobile.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    .intro__title {
+      color: $secondary-color;
     }
   }
 }
@@ -121,6 +128,18 @@
         margin-bottom: 114px;
       }
     }
+    &--use {
+      background: url("../images/intro-bg-use@tablet.jpg") no-repeat 100% 50%;
+      background-size: cover;
+      .intro__wrapper {
+        padding-bottom: 60px;
+      }
+      .intro__title {
+        margin-bottom: 30px;
+        text-align: right;
+        color: $secondary-color;
+      }
+    }
   }
 }
 
@@ -132,6 +151,13 @@
     }
     &__side {
       max-width: 600px;
+    }
+    &--use {
+      .intro__title {
+        margin-bottom: 0;
+        padding-left: 104px;
+        text-align: left;
+      }
     }
   }
 }

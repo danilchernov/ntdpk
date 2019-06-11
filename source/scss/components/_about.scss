@@ -7,7 +7,6 @@
     flex-flow: row wrap;
     text-align: center;
     margin-bottom: 30px;
-    
     i {
       font-style: normal;
       color: $theme-bg;
@@ -33,6 +32,10 @@
     &:not(:last-child) {
       margin-bottom: 20px
     }
+  }
+  b {
+    font-weight: $font-weight-bold;
+    color: $theme-bg;
   }
   i {
     font-style: normal;
@@ -103,6 +106,9 @@
 
 @include media($desktop-width) {
   .about {
+    &__wrapper {
+      max-width: 1000px;
+    }
     &__title {
       font-size: $desktop-title-text;
     }

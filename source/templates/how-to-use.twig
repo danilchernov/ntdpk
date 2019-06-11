@@ -1,0 +1,208 @@
+{% extends "components/base.twig" %}
+{% from "mock/ui.twig" import picture, svg,button, input, toggle, radio, checkbox %}
+
+{% block title %}Применение{% endblock %}
+{% block body %}
+
+<section class="intro intro--use block" js-intro>
+  <div class="intro__wrapper block__wrapper">
+    <h1 class="intro__title">Применение</h1>
+  </div>
+  <a class="intro__scroll scroll scroll_down" href="#" js-scroll-down aria-label="Пролистнуть страницу вниз" title="Пролистнуть страницу ниже">
+    <svg class="scroll__icon"
+        viewBox="0 0 86.001 86.001"
+        width="25"
+        height="25">
+      <use xlink:href="images/inline-svg.svg#icon-arrow-down"></use>
+    </svg>
+  </a>
+</section>
+
+<section class="about block">
+  <div class="about__wrapper block__wrapper">
+    <div class="about__main">
+      <div class="about__row">
+        <p><b>Террасная доска</b> – современный материал, который имеет множество положительных характеристик. Благодаря этому, область применения этого изделия весьма обширна.</p>
+      </div>
+      <div class="about__row">
+        <div class="about__gallery gallery">
+          <div class="gallery__wrapper">
+            <ul class="gallery__list gallery__list--center" js-slider js-gallery>
+              {% set photos = [
+                {
+                  "type": "use",
+                  "main": {
+                    "src": "images/photo-use-1.jpg",
+                    "alt": "Изображение конструкций, которые выполнены с помощью нашего материала",
+                    "aria": "Нажмите, чтобы открыть галерею с изображениями",
+                    "title": "Открыть галерею с изображениями"
+                  }
+                },
+                {
+                  "type": "use",
+                  "main": {
+                    "src": "images/photo-use-2.jpg",
+                    "alt": "Изображение конструкций, которые выполнены с помощью нашего материала",
+                    "aria": "Нажмите, чтобы открыть галерею с изображениями",
+                    "title": "Открыть галерею с изображениями"
+                  }
+                }
+              ] %}
+              {% for item in photos %}
+                <li class="gallery__item">
+                  {% include "components/photo.twig"  with {item: item} %}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="about__row">
+        <p>Уже давно террасная доска, применяется при строительстве причалов и пирсов частных и пассажирских судов, при обустройстве беседок и террас загородных домов. Популярность этого материала объясняется тем, что он способен выдерживать без повреждений и изменений любые природные влияния. Солнечный ультрафиолет, дожди и снег, температурные перепады, насекомые-вредители, гнилостные микроорганизмы, а также хождение в обуви и установка мебели не оказывают пагубного влияния на террасную доску.</p>
+      </div>
+      <div class="about__row">
+        <div class="about__gallery gallery">
+          <div class="gallery__wrapper">
+            <ul class="gallery__list gallery__list--center" js-slider js-gallery>
+              {% set photos = [
+                {
+                  "type": "use",
+                  "main": {
+                    "src": "images/photo-use-3.jpg",
+                    "alt": "Изображение конструкций, которые выполнены с помощью нашего материала",
+                    "aria": "Нажмите, чтобы открыть галерею с изображениями",
+                    "title": "Открыть галерею с изображениями"
+                  }
+                },
+                {
+                  "type": "use",
+                  "main": {
+                    "src": "images/photo-use-4.jpg",
+                    "alt": "Изображение конструкций, которые выполнены с помощью нашего материала",
+                    "aria": "Нажмите, чтобы открыть галерею с изображениями",
+                    "title": "Открыть галерею с изображениями"
+                  }
+                }
+              ] %}
+              {% for item in photos %}
+                <li class="gallery__item">
+                  {% include "components/photo.twig"  with {item: item} %}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="about__row">
+        <p>Как правило, террасная доска полимерная или натуральная используется при обустройстве патио и других настилов на территории загородного дома. Такие конструкции бывают открытыми и закрытыми, поднятыми над землей и даже установленными на крыше, все зависит от личного предпочтения владельца. Террасная доска устанавливается на открытых площадках заведений общественного питания, в пентхаусах. Нередко владельцы обычных квартир используют ее для отделки пола балконов.</p> 
+      </div>
+      <div class="about__row">
+        <div class="about__gallery gallery">
+          <div class="gallery__wrapper">
+            <ul class="gallery__list gallery__list--center" js-slider js-gallery>
+              {% set photos = [
+                {
+                  "type": "use",
+                  "main": {
+                    "src": "images/photo-use-5.jpg",
+                    "alt": "Изображение конструкций, которые выполнены с помощью нашего материала",
+                    "aria": "Нажмите, чтобы открыть галерею с изображениями",
+                    "title": "Открыть галерею с изображениями"
+                  }
+                },
+                {
+                  "type": "use",
+                  "main": {
+                    "src": "images/photo-use-6.jpg",
+                    "alt": "Изображение конструкций, которые выполнены с помощью нашего материала",
+                    "aria": "Нажмите, чтобы открыть галерею с изображениями",
+                    "title": "Открыть галерею с изображениями"
+                  }
+                }
+              ] %}
+              {% for item in photos %}
+                <li class="gallery__item">
+                  {% include "components/photo.twig"  with {item: item} %}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="about__row">
+        <p>На территории городов или парков отдыха также можно встретить современную террасную доску. Она может быть применена на спортивных площадках и детских зонах развлечений, при оформлении оранжерей и цветников. Она не только справится с серьезными факторами природного влияния, но и позволит реализовывать сложные дизайнерские проекты. Такая доска легко обрабатывается и монтируется, а в собранном виде не потребует чрезмерных усилий по уходу за ней.</p>
+      </div>
+      <div class="about__row">
+        <div class="about__gallery gallery">
+          <div class="gallery__wrapper">
+            <ul class="gallery__list gallery__list--center" js-slider js-gallery>
+              {% set photos = [
+                {
+                  "type": "use",
+                  "main": {
+                    "src": "images/photo-use-7.jpg",
+                    "alt": "Изображение конструкций, которые выполнены с помощью нашего материала",
+                    "aria": "Нажмите, чтобы открыть галерею с изображениями",
+                    "title": "Открыть галерею с изображениями"
+                  }
+                },
+                {
+                  "type": "use",
+                  "main": {
+                    "src": "images/photo-use-8.jpg",
+                    "alt": "Изображение конструкций, которые выполнены с помощью нашего материала",
+                    "aria": "Нажмите, чтобы открыть галерею с изображениями",
+                    "title": "Открыть галерею с изображениями"
+                  }
+                }
+              ] %}
+              {% for item in photos %}
+                <li class="gallery__item">
+                  {% include "components/photo.twig"  with {item: item} %}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="about__row">
+        <p>Одно из главных сфер применения террасной доски из ДПК – использование в зонах высокой влажности. Поэтому она может пригодиться при строительстве внешних территорий бассейнов, при отделке бани, для создания прогулочных тропинок на пляже. Она не гниет и имеет повышенное сцепление. Кроме того, такой материал применим в строительстве различных подиумов или лестниц, так как имеет одинаковые характеристики по всей поверхности. Ее используют для облицовки фасадов, для изготовления заборов и ограждений, а также при отделке внутренних стен.</p>
+      </div>
+      <div class="about__row">
+        <div class="about__gallery gallery">
+          <div class="gallery__wrapper">
+            <ul class="gallery__list gallery__list--center" js-slider js-gallery>
+              {% set photos = [
+                {
+                  "type": "use",
+                  "main": {
+                    "src": "images/photo-use-9.jpg",
+                    "alt": "Изображение конструкций, которые выполнены с помощью нашего материала",
+                    "aria": "Нажмите, чтобы открыть галерею с изображениями",
+                    "title": "Открыть галерею с изображениями"
+                  }
+                },
+                {
+                  "type": "use",
+                  "main": {
+                    "src": "images/photo-use-10.jpg",
+                    "alt": "Изображение конструкций, которые выполнены с помощью нашего материала",
+                    "aria": "Нажмите, чтобы открыть галерею с изображениями",
+                    "title": "Открыть галерею с изображениями"
+                  }
+                }
+              ] %}
+              {% for item in photos %}
+                <li class="gallery__item">
+                  {% include "components/photo.twig"  with {item: item} %}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

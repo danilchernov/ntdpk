@@ -8,11 +8,9 @@
   <div class="intro__wrapper block__wrapper">
     <h1 class="intro__title">О компании</h1>
   </div>
-  <a class="intro__scroll scroll scroll_down" href="#" js-scroll-down aria-label="Пролистнуть страницу вниз" title="Пролистнуть страницу ниже">
-    <svg class="scroll__icon"
-        viewBox="0 0 86.001 86.001"
-        width="25"
-        height="25">
+  <a class="intro__scroll scroll scroll_down" href="#" js-scroll-down aria-label="Пролистнуть страницу вниз"
+    title="Пролистнуть страницу ниже">
+    <svg class="scroll__icon" viewBox="0 0 86.001 86.001" width="25" height="25">
       <use xlink:href="images/inline-svg.svg#icon-arrow-down"></use>
     </svg>
   </a>
@@ -27,21 +25,30 @@
       <p>Производство изделий из древесно&nbsp;-&nbsp;полимерного композита.</p>
     </div>
     <div class="about__main">
-      <div class="about__row about__row_typography">
-        <p>Компания <i>«</i><span>Н-Технология</span><i>»</i> – это российский производитель террасной доски и других погонажных изделий из композитных материалов.</p> 
+      <div class="about__row">
+        <p>Компания <i>«</i><span>Н-Технология</span><i>»</i> – это российский производитель террасной доски и других
+          погонажных изделий из композитных материалов.</p>
 
-        <p>Для производства террасной доски из древесно-полимерного композита - <i>«</i><span>ДПК</span><i>»</i>, наша компания использует европейские экструзионные линии и современные станки для финальной обработки.</p>
+        <p>Для производства террасной доски из древесно-полимерного композита - <i>«</i><span>ДПК</span><i>»</i>, наша
+          компания использует европейские экструзионные линии и современные станки для финальной обработки.</p>
       </div>
-      <div class="about__row about__row_typography" data-aos="fade-up">
-        <p>Композитная террасная доска, или доска из древесно-полимерного композита <i>«</i><span>ДПК</span><i>»</i> - это самая быстрорастущая альтернатива дереву для устройства террас, набережных, и прочих отрытых мест, где требуется качественный настил. Эта доска может похвастаться низким уровнем необходимого обслуживания и гораздо более продолжительным сроком службы, чем деревянный настил. Особенности изготовления этого композитного материала позволили получить материал, имеющий свойства древесины ценных пород, но практически лишенный её недостатков. </p>
+      <div class="about__row">
+        <p>Композитная террасная доска, или доска из древесно-полимерного композита <i>«</i><span>ДПК</span><i>»</i> -
+          это самая быстрорастущая альтернатива дереву для устройства террас, набережных, и прочих отрытых мест, где
+          требуется качественный настил. Эта доска может похвастаться низким уровнем необходимого обслуживания и гораздо
+          более продолжительным сроком службы, чем деревянный настил. Особенности изготовления этого композитного
+          материала позволили получить материал, имеющий свойства древесины ценных пород, но практически лишенный её
+          недостатков. </p>
 
-        <p>Производим древесно-композитный декинг высокого качества: <span>террасную доску</span>, <span>сайдинг</span> и <span>погонаж</span> в размер заказчика.</p>
+        <p>Производим древесно-композитный декинг высокого качества: <span>террасную доску</span>, <span>сайдинг</span>
+          и <span>погонаж</span> в размер заказчика.</p>
 
         <blockquote>
-          <p><i>«‎</i>Мы работаем быстро и по разумным ценам, ставя в приоритет пожелания и потребности наших заказчиков<i>»</i></p>
+          <p><i>«‎</i>Мы работаем быстро и по разумным ценам, ставя в приоритет пожелания и потребности наших
+            заказчиков<i>»</i></p>
         </blockquote>
       </div>
-       <div class="about__row" data-aos="fade-up">
+      <div class="about__row">
         <div class="about__gallery gallery">
           <div class="gallery__wrapper">
             <h3 class="gallery__title">Наша продукция<span>:</span></h3>
@@ -157,15 +164,15 @@
                 }
               ] %}
               {% for item in photos %}
-                <li class="gallery__item">
-                  {% include "components/photo.twig"  with {item: item} %}
-                </li>
+              <li class="gallery__item">
+                {% include "components/photo.twig"  with {item: item} %}
+              </li>
               {% endfor %}
             </ul>
           </div>
         </div>
       </div>
-      <div class="about__row" data-aos="fade-up">
+      <div class="about__row">
         <div class="about__gallery gallery">
           <div class="gallery__wrapper">
             <h3 class="gallery__title">Наши дипломы<span>:</span></h3>
@@ -209,13 +216,20 @@
                 }
               ] %}
               {% for item in photos %}
-                <li class="gallery__item">
-                  {% include "components/photo.twig"  with {item: item} %}
-                </li>
+              <li class="gallery__item">
+                {% include "components/photo.twig"  with {item: item} %}
+              </li>
               {% endfor %}
             </ul>
           </div>
         </div>
+      </div>
+      <div class="about__row">
+        <p>Технические и эстетические характеристики этого уникального пиломатериала постоянно совершенствуются, что
+          открывает новые возможности для ее использования создавать уникальные объекты архитектуры.
+          Позвоните нам или закажите обратный звонок, и мы обязательно свяжемся с Вами, чтобы подобрать идеальное
+          решение специально для Вас.
+        </p>
       </div>
     </div>
   </div>
@@ -225,7 +239,9 @@
   <div class="map__wrapper block__wrapper">
     <h2 class="visually-hidden">Наше производство находится в Алтайском крае, в г. Бийске, ул. Васильева 93 B</h2>
     <div class="map__container">
-      <iframe class="lazyload" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.465346739791!2d85.12918521518677!3d52.506917079811714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42c4a9f28379bcfd%3A0x393aae2a3b4079f4!2z0YPQuy4g0JLQsNGB0LjQu9GM0LXQstCwLCA5M9CyLCDQkdC40LnRgdC6LCDQkNC70YLQsNC50YHQutC40Lkg0LrRgNCw0LksIDY1OTMxNQ!5e0!3m2!1sru!2sru!4v1556000331682!5m2!1sru!2sru" allowfullscreen></iframe>
+      <iframe class="lazyload"
+        data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.465346739791!2d85.12918521518677!3d52.506917079811714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42c4a9f28379bcfd%3A0x393aae2a3b4079f4!2z0YPQuy4g0JLQsNGB0LjQu9GM0LXQstCwLCA5M9CyLCDQkdC40LnRgdC6LCDQkNC70YLQsNC50YHQutC40Lkg0LrRgNCw0LksIDY1OTMxNQ!5e0!3m2!1sru!2sru!4v1556000331682!5m2!1sru!2sru"
+        allowfullscreen></iframe>
     </div>
   </div>
 </section>

@@ -42,6 +42,9 @@
       display: flex;
       flex-flow: row wrap;
       margin-bottom: -20px;
+      &--center {
+        justify-content: center;
+      }
     }
     li.gallery__item {
       @include flex-column(1,2, 5px);
@@ -62,6 +65,13 @@
       @include flex-column(1,4,10px);
       &:not(:nth-child(4n)) {
         margin-right: 20px;
+      }
+    }
+    &__list {
+      &--center {
+        li.gallery__item {
+          @include flex-column(1,2,10px);
+        }
       }
     }
   }

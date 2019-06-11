@@ -60,6 +60,9 @@
       &:not(:last-child) {
         margin-right: 5px;
       }
+      &:last-child {
+        display: none;
+      }
     }
     &__link {
       padding: 7.5px 10px;
@@ -105,6 +108,16 @@
     }
     &__icon {
       display: none;
+    }
+  }
+}
+
+@include media($desktop-width) {
+  .navigation {
+    &__item {
+      &:last-child {
+        display: flex;
+      }
     }
   }
 }
